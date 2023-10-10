@@ -98,7 +98,7 @@
                                                                         <div
                                                                             class="col-lg-8 right-content align-self-center">
                                                                             <a href="#">
-                                                                                <h4>Pengurusan Kartu Identitas Anak</h4>
+                                                                                <h4>Pengurusan Kartu Identitas Anakk</h4>
                                                                             </a>
                                                                             <h6>Persyaratan</h6>
                                                                             <span class="info"> KARTU KELUARGA<br> KTP
