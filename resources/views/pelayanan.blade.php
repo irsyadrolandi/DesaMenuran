@@ -102,7 +102,7 @@
                                                                             </a>
                                                                             <h6>Persyaratan</h6>
                                                                             <span class="info"> KARTU KELUARGA<br> KTP
-                                                                                <br> AKTA KELAHIRAN</span>
+                                                                                <br> AKTA sKELAHIRAN</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
