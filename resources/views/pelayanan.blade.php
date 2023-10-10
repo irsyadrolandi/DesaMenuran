@@ -101,7 +101,7 @@
                                                                                 <h4>Pengurusan Kartu Identitas Anak</h4>
                                                                             </a>
                                                                             <h6>Persyaratan</h6>
-                                                                            <span class="info"> KARTU KELUARGA<br> KTP
+                                                                            <span class="info"> KARTU KELUARjjGA<br> KTP
                                                                                 <br> AKTA KELAHIRAN</span>
                                                                         </div>
                                                                     </div>
