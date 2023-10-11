@@ -67,7 +67,7 @@ https://templatemo.com/tm-564-plot-listing
                                     class="{{ Request::is('profil-desa*') ? 'active' : '' }}">Profil Desa</a></li>
                             <li><a href="{{ route('pelayanan') }}"
                                     class="{{ Request::is('pelayanan*') ? 'active' : '' }}">Pelayanan</a></li>
-                            <li><a href="#">Galeri</a></li>
+                            <li><a href="{{ route('galeri-desa') }}" class="{{ Request::is('galeri-desa*') ? 'active' : '' }}">Galeri</a></li>
                             <li><a href="{{ route('kabar-desa') }}"
                                     class="{{ Request::is('kabar-desa*') ? 'active' : '' }}">Kabar Desa</a></li>
                             <li><a href="contact.html">Contact Us</a></li>
@@ -155,13 +155,12 @@ https://templatemo.com/tm-564-plot-listing
 
 
     <!-- Scripts -->
-    <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('vendor/jquery/jquery.js') }}"></script>
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('assets/js/owl-carousel.js') }}"></script>
     <script src="{{ asset('assets/js/animation.js') }}"></script>
     <script src="{{ asset('assets/js/imagesloaded.js') }}"></script>
     <script src="{{ asset('assets/js/custom.js') }}"></script>
-
 </body>
 
 </html>

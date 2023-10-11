@@ -29,6 +29,7 @@ Route::get('/', [home::class, 'index'])->name('home');
 Route::get('/profil-desa', [ProfilDesaController::class, 'index'])->name('profil-desa');
 Route::get('/pelayanan', [pelayananController::class, 'index'])->name('pelayanan');
 Route::get('/kabar-desa', [KabarDesaController::class, 'index'])->name('kabar-desa');
+Route::get('/galeri-desa', [ImageGalleryController::class, 'p_index'])->name('galeri-desa');
 
 Route::get('/login',[LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login',[LoginController::class, 'authenticate']);

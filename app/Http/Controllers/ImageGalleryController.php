@@ -13,6 +13,12 @@ class ImageGalleryController extends Controller
         return view('dashboard.dashboardGaleri', compact('images'));
     }
 
+    public function p_index()
+    {
+        $images = ImageGallery::get();
+        return view('galeriDesa', compact('images'));
+    }
+
 
     public function upload(Request $request)
     {
