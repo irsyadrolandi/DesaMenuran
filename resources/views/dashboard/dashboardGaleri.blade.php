@@ -95,11 +95,12 @@
                                 <div class="row">
                                     <div class="container">
                                         @if ($images->count())
-                                            <div class="row d-flex flex-wrap align-items-start" >
+                                            <div class="row d-flex flex-wrap align-items-start">
                                                 @foreach ($images as $image)
                                                     <div class="col-12 col-md-6 col-lg-3 mt-3">
                                                         <div class="card shadow-lg align-self-start">
-                                                            <div class="card-header bg-primary text-light d-flex justify-content-between">
+                                                            <div
+                                                                class="card-header bg-primary text-light d-flex justify-content-between">
                                                                 <div class=" align-self-start">
 
                                                                     {{ $image->title }}
@@ -111,43 +112,25 @@
 
                                                                     {!! csrf_field() !!}
 
-                                                                    <button type="submit" class=" btn btn-danger btn-sm"><i class="far fa-times-circle fa-sm"></i></button>
+                                                                    <button type="submit"
+                                                                        class=" btn btn-danger btn-sm"><i
+                                                                            class="far fa-times-circle fa-sm"></i></button>
 
                                                                 </form>
                                                             </div>
-                                                            <div data-toggle="modal"
-                                                            data-target="#lightbox">
+                                                            <div data-toggle="modal" data-target="#lightbox">
                                                                 <img class="gambar" src="/images/{{ $image->image }}"
-                                                                data-target="#indicators"
-                                                                data-slide-to="{{ $image->id }}" alt="a" />
+                                                                    data-target="#indicators"
+                                                                    data-slide-to="{{ $image->id }}"
+                                                                    alt="a" />
                                                             </div>
-                                                          </div>
+                                                        </div>
 
                                                     </div>
                                                 @endforeach
                                             </div>
                                         @endif
-                                        {{-- <div class="row d-flex flex-wrap align-items-center" data-toggle="modal" data-target="#lightbox">
-                                            <div class="col-12 col-md-6 col-lg-3">
 
-                                                <img src="https://source.unsplash.com/random/200" data-target="#indicators" data-slide-to="0" alt="" />
-                                            </div>
-                                            <div class="col-12 col-md-6 col-lg-3">
-                                                <img src="https://source.unsplash.com/random/201" data-target="#indicators" data-slide-to="1" alt="" />
-                                            </div>
-                                            <div class="col-12 col-md-6 col-lg-3">
-                                                <img src="https://source.unsplash.com/random/202" data-target="#indicators" data-slide-to="2" alt="" />
-                                            </div>
-                                            <div class="col-12 col-md-6 col-lg-3">
-                                                <img src="https://source.unsplash.com/random/203" data-target="#indicators" data-slide-to="3" alt="" />
-                                            </div>
-                                            <div class="col-12 col-md-6 col-lg-3">
-                                                <img src="https://source.unsplash.com/random/204" data-target="#indicators" data-slide-to="3" alt="" />
-                                            </div>
-                                            <div class="col-12 col-md-6 col-lg-3">
-                                                <img src="https://source.unsplash.com/random/205" data-target="#indicators" data-slide-to="4" alt="" />
-                                            </div>
-                                        </div> --}}
 
                                         <!-- Modal -->
                                         <div class="modal fade" id="lightbox" role="dialog" tabindex="-1"
@@ -156,7 +139,7 @@
                                                 <div class="modal-content bg-primary">
                                                     <div class="d-flex justify-content-between">
                                                         <div class="align-self-center ml-3">
-
+                                                            <h4 id="nama"></h4>
                                                         </div>
 
                                                         <button type="button" class="close text-right p-2"
@@ -174,44 +157,15 @@
                                                         </ol>
                                                         <div class="carousel-inner">
                                                             @foreach ($images as $image)
-                                                                <div class="carousel-item" id="{{ $image->id }}">
+                                                                <div class="carousel-item" id="{{ $image->id }}"
+                                                                    data-nama="{{ $image->title }}">
                                                                     <img class="d-block w-100"
                                                                         src="/images/{{ $image->image }}"
                                                                         alt="{{ $image->id }}">
                                                                 </div>
                                                             @endforeach
 
-                                                            {{-- <div class="carousel-item active">
 
-                                                                <img class="d-block w-100"
-                                                                    src="https://source.unsplash.com/random/200"
-                                                                    alt="First slide">
-                                                            </div>
-                                                            <div class="carousel-item">
-                                                                <img class="d-block w-100"
-                                                                    src="https://source.unsplash.com/random/201"
-                                                                    alt="Second slide">
-                                                            </div>
-                                                            <div class="carousel-item">
-                                                                <img class="d-block w-100"
-                                                                    src="https://source.unsplash.com/random/202"
-                                                                    alt="Third slide">
-                                                            </div>
-                                                            <div class="carousel-item">
-                                                                <img class="d-block w-100"
-                                                                    src="https://source.unsplash.com/random/203"
-                                                                    alt="Fourth slide">
-                                                            </div>
-                                                            <div class="carousel-item">
-                                                                <img class="d-block w-100"
-                                                                    src="https://source.unsplash.com/random/204"
-                                                                    alt="Fifth slide">
-                                                            </div>
-                                                            <div class="carousel-item">
-                                                                <img class="d-block w-100"
-                                                                    src="https://source.unsplash.com/random/205"
-                                                                    alt="Sixth slide">
-                                                            </div> --}}
                                                         </div>
                                                         <a class="carousel-control-prev" href="#indicators"
                                                             role="button" data-slide="prev">
@@ -231,58 +185,21 @@
                                             </div>
                                         </div>
                                     </div>
-                                    {{-- <div class='list-grou'>
-                                        @if ($images->count())
 
-                                            @foreach ($images as $image)
-                                                <div class= 'col-12 col-md-6 col-lg-3'>
+                                </div> <!-- list-group / end -->
 
-                                                    <a class=" thumbnail fancybox" rel="ligthbox"
-                                                        href="/images/{{ $image->image }}">
+                            </div> <!-- row / end -->
 
-                                                        <img class="img-thumbnail" alt=""
-                                                            src="/images/{{ $image->image }}" />
-
-                                                        <div class='text-center'>
-
-                                                            <small class='text-muted'>{{ $image->title }}</small>
-
-                                                        </div> <!-- text-center / end -->
-
-                                                    </a>
-
-                                                    <form action="{{ url('image-gallery', $image->id) }}"
-                                                        method="POST">
-
-                                                        <input type="hidden" name="_method" value="delete">
-
-                                                        {!! csrf_field() !!}
-
-                                                        <button type="submit" class="close-icon btn btn-danger"><i
-                                                                class="glyphicon glyphicon-remove"></i></button>
-
-                                                    </form>
-
-                                                </div> <!-- col-6 / end -->
-                                            @endforeach
-
-                                        @endif
-
-
-                                    </div> <!-- list-group / end --> --}}
-
-                                </div> <!-- row / end -->
-
-                            </div> <!-- container / end -->
-                        </div>
+                        </div> <!-- container / end -->
                     </div>
                 </div>
-
             </div>
-            <!-- /.container-fluid -->
 
         </div>
-        <!-- End of Main Content -->
+        <!-- /.container-fluid -->
+
+    </div>
+    <!-- End of Main Content -->
 
 
 
@@ -315,7 +232,23 @@
                 $g = $(this);
                 $gam = $('#' + $g.data('slide-to')).addClass("active");
 
+
             });
+
+            $('#lightbox').on('shown.bs.modal', function(event) {
+                $nama = $('.carousel-item.active');
+                $('#nama').empty();
+                $('#nama').append($nama.data('nama'))
+            })
+
+
+            $('#indicators').on('slide.bs.carousel', function() {
+                $nama = $('.carousel-item.active');
+                $('#nama').empty();
+                $('#nama').append($nama.data('nama'))
+            })
+
+
             $('#lightbox').on('hide.bs.modal', function() {
                 $('.carousel-item').removeClass('active');
             })

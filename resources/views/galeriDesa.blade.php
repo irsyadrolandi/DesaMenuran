@@ -1,9 +1,9 @@
 @extends('template')
 @section('contents')
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 
 
     <style>
@@ -45,10 +45,6 @@
 
                             <div class="card shadow mb-4 mt-3 w-100">
 
-
-
-
-
                                 <!-- Card Body -->
                                 <div class="card-body">
 
@@ -70,7 +66,9 @@
                                                                 <div data-bs-toggle="modal" data-bs-target="#lightbox">
                                                                     <img class="gambar" src="/images/{{ $image->image }}"
                                                                         data-target="#indicators"
-                                                                        data-slide-to="{{ $image->id }}" alt="a" />
+                                                                        data-gambar-name="{{ $image->title }}"
+                                                                        data-slide-to="{{ $image->id }}"
+                                                                        alt="a" />
                                                                 </div>
                                                             </div>
 
@@ -80,18 +78,19 @@
                                             @endif
 
 
+
                                             <!-- Modal -->
                                             <div class="modal fade" id="lightbox" tabindex="-1" aria-labelledby="lightbox"
                                                 aria-hidden="true">
                                                 <div class="modal-dialog" role="document">
                                                     <div class="modal-content bg-primary">
                                                         <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                          </div>
-                                                        <div>
-
-                                                            <div class="carousel-inner">
+                                                            <h5 class="modal-title" id="exampleModalLabel"></h5>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                                aria-label="Close"></button>
+                                                        </div>
+                                                        <div >
+                                                            <div>
                                                                 @foreach ($images as $image)
                                                                     <div class="item visually-hidden" id="{{ $image->id }}">
                                                                         <img class="d-block w-100"
@@ -100,36 +99,35 @@
                                                                     </div>
                                                                 @endforeach
                                                             </div>
-
                                                         </div>
-
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
 
+                                </div> <!-- row / end -->
 
-                                    </div> <!-- row / end -->
-
-                                </div> <!-- container / end -->
-                            </div>
+                            </div> <!-- container / end -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    </div>
 
     <script>
-
         $(document).ready(function() {
             $('.gambar').on('click', function() {
                 $g = $(this);
-                $gam = $('#' + $g.data('slide-to')).removeClass("visually-hidden");
+                $gam = $('#' + $g.data('slide-to')).removeClass('visually-hidden');
+                $('#exampleModalLabel').append($g.data('gambar-name'))
 
             });
             $('#lightbox').on('hide.bs.modal', function() {
                 $('.item').addClass('visually-hidden');
+                $('#exampleModalLabel').empty();
             })
         });
     </script>
