@@ -8,7 +8,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\KabarDesaController;
 use App\Http\Controllers\pelayananController;
+use App\Http\Controllers\PerangkatDesaController;
 use App\Http\Controllers\ProfilDesaController;
+use App\Models\perangkatDesa;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +22,11 @@ use App\Http\Controllers\ProfilDesaController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+// Route::get('/dashboard/profil-desa-5', [DashboardController::class, 'perangkatDesa'])->middleware('auth')->name('dashboard-perangkat-desa');
+Route::post('image-perangkat', [PerangkatDesaController::class, 'upload'])->middleware('auth')->name('upload-perangkat');
+Route::delete('image-perangkat/{id}', [PerangkatDesaController::class, 'destroy'])->middleware('auth')->name('destroy-perangkat');
+// Route::get('/dashboard/galeri', [ImageGalleryController::class, 'index'])->middleware('auth')->name('dashboard-galeri');
 
 Route::post('image-gallery', [ImageGalleryController::class, 'upload'])->middleware('auth')->name('upload-galeri');
 Route::delete('image-gallery/{id}', [ImageGalleryController::class, 'destroy'])->middleware('auth')->name('destroy-galeri');
