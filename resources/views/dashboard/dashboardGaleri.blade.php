@@ -242,7 +242,7 @@
             })
 
 
-            $('#indicators').on('slide.bs.carousel', function() {
+            $('#indicators').on('slid.bs.carousel', function() {
                 $nama = $('.carousel-item.active');
                 $('#nama').empty();
                 $('#nama').append($nama.data('nama'))
