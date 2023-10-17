@@ -101,9 +101,8 @@
                                                         <div class="card shadow-lg align-self-start">
                                                             <div
                                                                 class="card-header bg-primary text-light d-flex justify-content-between">
-                                                                <div class=" align-self-start">
-
-                                                                    {{ $image->title }}
+                                                                <div>
+                                                                {{ $image->title }}
                                                                 </div>
                                                                 <form action="{{ url('image-gallery', $image->id) }}"
                                                                     method="POST">
@@ -138,7 +137,7 @@
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content bg-primary">
                                                     <div class="d-flex justify-content-between">
-                                                        <div class="align-self-center ml-3">
+                                                        <div class="mt-1 ml-3 text-light">
                                                             <h4 id="nama"></h4>
                                                         </div>
 

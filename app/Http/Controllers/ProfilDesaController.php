@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\profilDesa;
 use App\Http\Requests\StoreprofilDesaRequest;
 use App\Http\Requests\UpdateprofilDesaRequest;
+use App\Models\perangkatDesa;
 
 class ProfilDesaController extends Controller
 {
@@ -20,7 +21,7 @@ class ProfilDesaController extends Controller
             "sejarah" =>  profilDesa::where('id', '=', '2')->first(),
             "demografi" =>  profilDesa::where('id', '=', '3')->first(),
             "visiMisi" =>  profilDesa::where('id', '=', '4')->first(),
-            "perangkatDesa" =>  profilDesa::where('id', '=', '5')->first(),
+            "images" =>  perangkatDesa::get(),
             "lembaga" =>  profilDesa::where('id', '=', '6')->first(),
         ]);
     }

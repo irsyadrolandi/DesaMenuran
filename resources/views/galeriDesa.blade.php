@@ -75,7 +75,12 @@
                                                         </div>
                                                     @endforeach
                                                 </div>
+                                                @else
+                                                <div class="d-flex justify-content-center">
+                                                    <h2>GALERI KOSONG</h2>
+                                                </div>
                                             @endif
+
 
 
 
