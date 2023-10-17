@@ -87,7 +87,7 @@
                                             <!-- Modal -->
                                             <div class="modal fade" id="lightbox" tabindex="-1" aria-labelledby="lightbox"
                                                 aria-hidden="true">
-                                                <div class="modal-dialog" role="document">
+                                                <div class="modal-dialog modal-dialog-centered" role="document">
                                                     <div class="modal-content bg-primary">
                                                         <div class="modal-header">
                                                             <h5 class="modal-title" id="exampleModalLabel"></h5>

@@ -134,7 +134,7 @@
                                         <!-- Modal -->
                                         <div class="modal fade" id="lightbox" role="dialog" tabindex="-1"
                                             aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog" role="document">
+                                            <div class="modal-dialog modal-dialog-centered" role="document">
                                                 <div class="modal-content bg-primary">
                                                     <div class="d-flex justify-content-between">
                                                         <div class="mt-1 ml-3 text-light">

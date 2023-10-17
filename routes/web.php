@@ -24,6 +24,7 @@ use App\Models\perangkatDesa;
 */
 
 // Route::get('/dashboard/profil-desa-5', [DashboardController::class, 'perangkatDesa'])->middleware('auth')->name('dashboard-perangkat-desa');
+Route::get('/dashboard/profil-desa-{id}', [DashboardController::class, 'show'])->middleware('auth')->name('dashboard-profil-desa');
 Route::post('image-perangkat', [PerangkatDesaController::class, 'upload'])->middleware('auth')->name('upload-perangkat');
 Route::delete('image-perangkat/{id}', [PerangkatDesaController::class, 'destroy'])->middleware('auth')->name('destroy-perangkat');
 // Route::get('/dashboard/galeri', [ImageGalleryController::class, 'index'])->middleware('auth')->name('dashboard-galeri');
@@ -42,6 +43,5 @@ Route::get('/login',[LoginController::class, 'index'])->name('login')->middlewar
 Route::post('/login',[LoginController::class, 'authenticate']);
 Route::post('/logout',[LoginController::class, 'logout'])->name('logout');
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth')->name('dashboard');
-Route::get('/dashboard/profil-desa-{id}', [DashboardController::class, 'show'])->middleware('auth')->name('dashboard-profil-desa');
 
 
