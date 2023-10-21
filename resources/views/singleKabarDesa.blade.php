@@ -122,7 +122,7 @@ https://templatemo.com/tm-564-plot-listing
                         <div class="card-body">
 
                             <p class="card-text">{!! $kabar->body !!}</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            <p class="card-text"><small class="text-muted">{{ $kabar->created_at->diffForhumans() }}</small></p>
                         </div>
                     </div>
                     <a href="{{ route('kabar-desa') }}" type="button" class="btn btn-primary mb-5 btn">Kembali</a>

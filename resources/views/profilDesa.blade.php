@@ -27,7 +27,7 @@
                                     <div class="menu row">
                                         <div class="first-thumb active col-lg-2">
                                             <div class="thumb">
-                                                <span class="icon"><img src="assets/images/search-icon-01.png"
+                                                <span class="icon"><img src="assets/images/icon-gambaran-umum.png"
                                                         alt="">
                                                     <h4>Gambaran Umum</h4>
                                                 </span>
@@ -35,7 +35,7 @@
                                         </div>
                                         <div class=" col-lg-2">
                                             <div class="thumb">
-                                                <span class="icon"><img src="assets/images/search-icon-02.png"
+                                                <span class="icon"><img src="assets/images/icon-sejarah.png"
                                                         alt="">
                                                     <h4>Sejarah</h4>
                                                 </span>
@@ -43,7 +43,7 @@
                                         </div>
                                         <div class=" col-lg-2">
                                             <div class="thumb">
-                                                <span class="icon"><img src="assets/images/search-icon-03.png"
+                                                <span class="icon"><img src="assets/images/icon-demografi.png"
                                                         alt="">
                                                     <h4>Demografi</h4>
                                                 </span>
@@ -51,7 +51,7 @@
                                         </div>
                                         <div class=" col-lg-2">
                                             <div class="thumb">
-                                                <span class="icon"><img src="assets/images/search-icon-04.png"
+                                                <span class="icon"><img src="assets/images/icon-visi-misi.png"
                                                         alt="">
                                                     <h4>Visi &amp; Misi</h4>
                                                 </span>
@@ -59,7 +59,7 @@
                                         </div>
                                         <div class=" col-lg-2">
                                             <div class="thumb">
-                                                <span class="icon"><img src="assets/images/search-icon-05.png"
+                                                <span class="icon"><img src="assets/images/icon-perangkat-desa.png"
                                                         alt="">
                                                     <h4>Perangkat Desa</h4>
                                                 </span>
@@ -67,7 +67,7 @@
                                         </div>
                                         <div class="last-thumb  col-lg-2">
                                             <div class="thumb">
-                                                <span class="icon"><img src="assets/images/search-icon-05.png"
+                                                <span class="icon"><img src="assets/images/icon-lembaga.png"
                                                         alt="">
                                                     <h4>Lembaga</h4>
                                                 </span>
