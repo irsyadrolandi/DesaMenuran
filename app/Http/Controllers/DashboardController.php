@@ -13,7 +13,7 @@ class DashboardController extends Controller
     {
         return view('dashboard.index' ,[
             "profilDesas" => profilDesa::all(),
-            "kabarDesas" => kabarDesa::latest()->get()
+            "kabarDesas" => kabarDesa::latest()->paginate(4)
         ]);
     }
 

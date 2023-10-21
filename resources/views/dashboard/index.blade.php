@@ -72,6 +72,10 @@
                         @endforeach
 
                     </div>
+                    <div class="d-flex justify-content-center">
+
+                        {{ $kabarDesas->links() }}
+                    </div>
 
                 </div>
                 <!-- /.container-fluid -->
