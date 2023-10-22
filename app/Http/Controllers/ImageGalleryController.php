@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\ImageGallery;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class ImageGalleryController extends Controller
 {
@@ -34,9 +36,12 @@ class ImageGalleryController extends Controller
     		->with('success','Image Uploaded successfully.');
     }
 
-    public function destroy($id)
+    public function destroy(ImageGallery $id)
     {
-    	ImageGallery::find($id)->delete();
+
+        File::delete(public_path('images/'.$id->image));
+    	ImageGallery::find($id->id)->delete();
+
     	return back()
     		->with('success','Image removed successfully.');
 

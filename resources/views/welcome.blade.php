@@ -70,10 +70,7 @@
                                                 <a href="{{ route('skabar-desa', $kabardesa->slug) }}">
                                                     <h4>{{ $kabardesa->title }}</h4>
                                                 </a>
-
-                                                <h6>{{ $kabardesa->exerpt }}</h6>
-
-
+                                                <h6>{!! Str::length($kabardesa->body) > 500 ? substr($kabardesa->body, 0, 500) . '...' : $kabardesa->body !!}</h6>
                                             </div>
                                         </div>
                                     </div>

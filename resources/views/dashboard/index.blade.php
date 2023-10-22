@@ -64,7 +64,8 @@
                                                 src="{{ $kabarDesa->image == "" ? 'https://source.unsplash.com/1200x600/?news' : $kabarDesa->image }}" alt="...">
                                         </div>
                                         <h3 class=" text-dark">{{ $kabarDesa->title }}</h3>
-                                        <p>{!! $kabarDesa->exerpt !!}</p>
+                                        <h6>{{ $kabarDesa->kategori }}</h6>
+                                        <p>{!! Str::length($kabarDesa->body) > 500 ? substr($kabarDesa->body, 0, 500) . '...' : $kabarDesa->body !!}</p>
                                         <a target="_blank" href="https://undraw.co/">Read More &rarr;</a>
                                     </div>
                                 </div>

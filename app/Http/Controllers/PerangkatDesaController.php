@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\perangkatDesa;
+use Illuminate\Support\Facades\File;
 use App\Http\Requests\StoreperangkatDesaRequest;
 use App\Http\Requests\UpdateperangkatDesaRequest;
 
@@ -94,9 +95,12 @@ class PerangkatDesaController extends Controller
      * @param  \App\Models\perangkatDesa  $perangkatDesa
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(perangkatDesa $id)
     {
-        perangkatDesa::find($id)->delete();
+        if(File::exists(public_path('images/'.$id->image))){
+            File::delete(public_path('images/'.$id->image));
+        }
+        perangkatDesa::find($id->id)->delete();
         return back()
             ->with('success', 'Image removed successfully.');
     }
