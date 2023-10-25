@@ -20,7 +20,6 @@ class DashboardController extends Controller
 
     public function show(profilDesa $id)
     {
-
         if ($id->id == '5') {
             $images = perangkatDesa::get();
             return view('dashboard.dashboardPerangkatDesa',compact('images')
@@ -30,7 +29,30 @@ class DashboardController extends Controller
                 "profilDesa" => $id
         ]);
         }
+    }
 
+    public function showKabarDesa()
+    {
+            return view('dashboard.dashboardKabarDesa',[
+                "title" => "Kabar Desa",
+                "kabarDesas" => kabarDesa::latest()->filter(request(['kategori']))->paginate(4)
+            ]);
+    }
 
+    public function showPengumumanDesa()
+    {
+            return view('dashboard.dashboardKabarDesa',[
+                "title" => "Pengumuman",
+                "kabarDesas" => kabarDesa::where('kategori', '=', '2')->latest()->paginate(4)
+            ]);
+    }
+
+    public function showSingleKabarDesa(kabarDesa $slug)
+    {
+        // dd($slug->slug);
+            return view('dashboard.dashboardSingleKabarDesa',[
+                "title" => $slug->kategori,
+                "kabarDesa" => kabarDesa::where('slug', $slug->slug)->first()
+            ]);
     }
 }

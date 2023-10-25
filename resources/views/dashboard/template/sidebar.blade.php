@@ -56,10 +56,10 @@
             </i><i class="fas fa-newspaper"></i>
             <span>Kabar Desa</span>
         </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+        <div id="collapseUtilities" class="collapse {{ Request::is('dashboard/kabar-*') ? 'show' : '' }}" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="utilities-color.html">Kabaar Desa</a>
-                <a class="collapse-item" href="utilities-border.html">Pengumuman</a>
+                <a class="collapse-item {{ Request::is('dashboard/kabar-desa*') ? 'active' : '' }}" href="{{ route("dashboard-kabar-desa") }}">Kabar Desa</a>
+                <a class="collapse-item {{ Request::is('dashboard/kabar-pengumuman-desa*') ? 'active' : '' }}" href="{{ route("dashboard-pengumuman-desa") }}">Pengumuman</a>
             </div>
         </div>
     </li>

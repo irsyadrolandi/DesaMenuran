@@ -10,7 +10,7 @@
                             <?php $a = request('kategori'); ?>
                             @if ('2' == $a)
                                 <h2>Pengumuman</h2>
-                                @else
+                            @else
                                 <h2>Kabar<br>
                             @endif
                         @endif
@@ -67,84 +67,6 @@
                                 </div>
 
                             </div>
-                            {{-- <ul class="nacc">
-                                        <!-- first category listing of items -->
-                                        <li class="active">
-                                            <div>
-                                                <div class="col-lg-12">
-                                                    <div class="owl-carousel owl-listing">
-                                                        <div class="item">
-                                                            <div class="row">
-                                                                @foreach ($kabarDesas as $kabarDesa)
-                                                                    <div class="col-lg-12">
-                                                                        <div class="listing-item row">
-                                                                            <div class="col-lg-5 left-image">
-                                                                                <a
-                                                                                    href="{{ route('skabar-desa', $kabarDesa->slug) }}"><img
-                                                                                        src="assets/images/listing-01.jpg"
-                                                                                        alt=""></a>
-                                                                            </div>
-                                                                            <div
-                                                                                class="col-lg-7 right-content align-self-center">
-                                                                                <a
-                                                                                    href="{{ route('skabar-desa', $kabarDesa->slug) }}">
-                                                                                    <h4>{{ $kabarDesa->title }}</h4>
-                                                                                </a>
-                                                                                <h6>{{ $kabarDesa->exerpt }}</h6>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                @endforeach
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-
-                                        <!-- second category listing of items -->
-                                        <li>
-                                            <div>
-                                                <div class="col-lg-12">
-                                                    <div class="owl-carousel owl-listing">
-                                                        <div class="item">
-                                                            <div class="row">
-                                                                @foreach ($pengumumans as $pengumuman)
-                                                                    <div class="col-lg-12">
-                                                                        <div class="listing-item row">
-                                                                            <div class="col-lg-5 left-image">
-                                                                                <a
-                                                                                    href="{{ route('skabar-desa', $pengumuman->slug) }}"><img
-                                                                                        src="assets/images/listing-01.jpg"
-                                                                                        alt=""></a>
-                                                                            </div>
-                                                                            <div
-                                                                                class="col-lg-7 right-content align-self-center">
-                                                                                <a
-                                                                                    href="{{ route('skabar-desa', $pengumuman->slug) }}">
-                                                                                    <h4>{{ $pengumuman->title }}</h4>
-                                                                                </a>
-                                                                                <h6>{{ $pengumuman->exerpt }}</h6>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                @endforeach
-
-                                                                <div class="d-flex justify-content-center">
-                                                                    {{ $pengumumans->links() }}
-                                                                </div>
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-
-
-                                    </ul> --}}
-
                         </div>
 
                     </div>
