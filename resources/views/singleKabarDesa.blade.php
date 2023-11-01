@@ -125,7 +125,7 @@ https://templatemo.com/tm-564-plot-listing
                             <p class="card-text"><small class="text-muted">{{ $kabar->created_at->diffForhumans() }}</small></p>
                         </div>
                     </div>
-                    <a href="{{ route('kabar-desa') }}" type="button" class="btn btn-primary mb-5 btn">Kembali</a>
+                    <a href="{{ url()->previous() }}" type="button" class="btn btn-primary mb-5 btn">Kembali</a>
 
                 </div>
 
