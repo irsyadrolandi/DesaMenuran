@@ -24,9 +24,9 @@ use App\Models\perangkatDesa;
 */
 
 
-Route::get('/dashboard/kabar-desa-{slug}', [DashboardController::class, 'showSingleKabarDesa'])->middleware('auth')->name('dashboard-single-kabar-desa');
-Route::get('/dashboard/kabar-desa', [DashboardController::class, 'showKabarDesa'])->middleware('auth')->name('dashboard-kabar-desa');
-Route::get('/dashboard/kabar-pengumuman-desa', [DashboardController::class, 'showPengumumanDesa'])->middleware('auth')->name('dashboard-pengumuman-desa');
+Route::get('/dashboard/kabar-desa/{slug}/edit', [KabarDesaController::class, 'editSingleKabarDesa'])->middleware('auth')->name('dashboard-single-kabar-desa-edit');
+Route::get('/dashboard/kabar-desa/{slug}', [KabarDesaController::class, 'showSingleKabarDesa'])->middleware('auth')->name('dashboard-single-kabar-desa');
+Route::get('/dashboard/kabar-desa', [KabarDesaController::class, 'showKabarDesa'])->middleware('auth')->name('dashboard-kabar-desa');
 Route::get('/dashboard/profil-desa-{id}', [DashboardController::class, 'show'])->middleware('auth')->name('dashboard-profil-desa');
 Route::post('image-perangkat', [PerangkatDesaController::class, 'upload'])->middleware('auth')->name('upload-perangkat');
 Route::delete('image-perangkat/{id}', [PerangkatDesaController::class, 'destroy'])->middleware('auth')->name('destroy-perangkat');

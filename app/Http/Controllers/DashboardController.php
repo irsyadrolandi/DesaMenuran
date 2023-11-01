@@ -31,28 +31,28 @@ class DashboardController extends Controller
         }
     }
 
-    public function showKabarDesa()
-    {
-            return view('dashboard.dashboardKabarDesa',[
-                "title" => "Kabar Desa",
-                "kabarDesas" => kabarDesa::latest()->filter(request(['kategori']))->paginate(4)
-            ]);
-    }
+    // public function showKabarDesa()
+    // {
+    //         return view('dashboard.dashboardKabarDesa',[
+    //             "title" => "Kabar Desa",
+    //             "kabarDesas" => kabarDesa::latest()->filter(request(['kategori']))->paginate(4)
+    //         ]);
+    // }
 
-    public function showPengumumanDesa()
-    {
-            return view('dashboard.dashboardKabarDesa',[
-                "title" => "Pengumuman",
-                "kabarDesas" => kabarDesa::where('kategori', '=', '2')->latest()->paginate(4)
-            ]);
-    }
+    // public function showPengumumanDesa()
+    // {
+    //         return view('dashboard.dashboardKabarDesa',[
+    //             "title" => "Pengumuman",
+    //             "kabarDesas" => kabarDesa::where('kategori', '=', '2')->latest()->paginate(4)
+    //         ]);
+    // }
 
-    public function showSingleKabarDesa(kabarDesa $slug)
-    {
-        // dd($slug->slug);
-            return view('dashboard.dashboardSingleKabarDesa',[
-                "title" => $slug->kategori,
-                "kabarDesa" => kabarDesa::where('slug', $slug->slug)->first()
-            ]);
-    }
+    // public function showSingleKabarDesa(kabarDesa $slug)
+    // {
+    //     // dd($slug->slug);
+    //         return view('dashboard.dashboardSingleKabarDesa',[
+    //             "title" => $slug->kategori,
+    //             "kabarDesa" => kabarDesa::where('slug', $slug->slug)->first()
+    //         ]);
+    // }
 }

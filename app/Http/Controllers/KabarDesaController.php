@@ -50,11 +50,56 @@ class KabarDesaController extends Controller
      */
     public function show(kabarDesa $slug)
     {
-        // dd($slug);
         return view('singleKabarDesa', [
             "kabar" => $slug
         ]);
     }
+
+    public function showAllKabarDesa()
+    {
+            return view('dashboard.dashboardKabarDesa',[
+                "title" => "Kabar Desa",
+                "kabarDesas" => kabarDesa::latest()->paginate(4)
+            ]);
+
+    }
+
+    public function showKabarDesa()
+    {
+            return view('dashboard.dashboardKabarDesa',[
+                "title" => "Kabar Desa",
+                "kabarDesas" => kabarDesa::filter(request(['search', 'kategori']))->latest()->paginate(4)
+            ]);
+    }
+
+    public function showPengumumanDesa()
+    {
+            return view('dashboard.dashboardKabarDesa',[
+                "title" => "Pengumuman",
+                "kabarDesas" => kabarDesa::where('kategori', '=', '2')->latest()->paginate(4)
+            ]);
+    }
+
+    public function showSingleKabarDesa(kabarDesa $slug)
+    {
+        // dd($slug->slug);
+            return view('dashboard.dashboardSingleKabarDesa',[
+                "title" => $slug->kategori,
+                "purpose" => "show",
+                "kabarDesa" => kabarDesa::where('slug', $slug->slug)->first()
+            ]);
+    }
+
+    public function editSingleKabarDesa(kabarDesa $slug)
+    {
+        // dd($slug->slug);
+            return view('dashboard.dashboardSingleKabarDesa',[
+                "title" => "edit $slug->kategori",
+                "purpose" => "edit",
+                "kabarDesa" => kabarDesa::where('slug', $slug->slug)->first()
+            ]);
+    }
+
 
     /**
      * Show the form for editing the specified resource.

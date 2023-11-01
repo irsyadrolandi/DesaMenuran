@@ -58,8 +58,9 @@
         </a>
         <div id="collapseUtilities" class="collapse {{ Request::is('dashboard/kabar-*') ? 'show' : '' }}" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item {{ Request::is('dashboard/kabar-desa*') ? 'active' : '' }}" href="{{ route("dashboard-kabar-desa") }}">Kabar Desa</a>
-                <a class="collapse-item {{ Request::is('dashboard/kabar-pengumuman-desa*') ? 'active' : '' }}" href="{{ route("dashboard-pengumuman-desa") }}">Pengumuman</a>
+                {{-- <a class="collapse-item {{ Request::is('dashboard/kabar-desa*') ? 'active' : '' }}" href="{{ route("dashboard-semua-kabar-desa") }}">Semua Kabar Desa</a> --}}
+                <a class="collapse-item {{ Request::is('/dashboard/kabar-desa?kategori=1*') ? 'active' : '' }}" href="/dashboard/kabar-desa?kategori=1">Kabar Desa</a>
+                <a class="collapse-item {{ Request::is('/dashboard/kabar-desa?kategori=2*') ? 'active' : '' }}" href="/dashboard/kabar-desa?kategori=2">Pengumuman</a>
             </div>
         </div>
     </li>

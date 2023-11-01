@@ -30,8 +30,25 @@
                         @foreach ($kabarDesas as $kabarDesa)
                             <div class="col-xl-6 col-md-12">
                                 <div class="card shadow mb-4">
-                                    <div class="card-header py-3">
+                                    <div
+                                        class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                         <h6 class="m-0 font-weight-bold text-primary">Kabar Desa</h6>
+                                        <div class="dropdown no-arrow">
+                                            <a class="dropdown-toggle" href="#" role="button"
+                                                id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false">
+                                                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                                aria-labelledby="dropdownMenuLink">
+                                                <div class="dropdown-header">Option:</div>
+                                                <a class="dropdown-item" href="#"><i class="far fa-edit"></i>
+                                                    Edit</a>
+                                                <div class="dropdown-divider"></div>
+                                                <a class="dropdown-item" href="#"><i class="far fa-trash-alt"></i>
+                                                    Hapus</a>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="card-body">
                                         <div class="text-center">
@@ -45,7 +62,7 @@
                                             class=  "text-dark">
                                             <h3>{{ $kabarDesa->title }}</h3>
                                         </a>
-                                        <h6>{{ $kabarDesa->kategori }}</h6>
+                                        <h6>{{ $kabarDesa->kategori == "1" ? 'Kabar Desa' : 'Pengumuman' }}</h6>
                                         <p>{!! Str::length($kabarDesa->body) > 500 ? substr($kabarDesa->body, 0, 500) . '...' : $kabarDesa->body !!}</p>
                                         <a href="{{ route('dashboard-single-kabar-desa', $kabarDesa->slug) }}">Read More
                                             &rarr;</a>
