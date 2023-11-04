@@ -24,17 +24,20 @@ use App\Models\perangkatDesa;
 */
 
 
-Route::get('/dashboard/kabar-desa/{slug}/edit', [KabarDesaController::class, 'editSingleKabarDesa'])->middleware('auth')->name('dashboard-single-kabar-desa-edit');
-Route::get('/dashboard/kabar-desa/{slug}', [KabarDesaController::class, 'showSingleKabarDesa'])->middleware('auth')->name('dashboard-single-kabar-desa');
-Route::get('/dashboard/kabar-desa', [KabarDesaController::class, 'showKabarDesa'])->middleware('auth')->name('dashboard-kabar-desa');
-Route::get('/dashboard/profil-desa-{id}', [DashboardController::class, 'show'])->middleware('auth')->name('dashboard-profil-desa');
-Route::post('image-perangkat', [PerangkatDesaController::class, 'upload'])->middleware('auth')->name('upload-perangkat');
-Route::delete('image-perangkat/{id}', [PerangkatDesaController::class, 'destroy'])->middleware('auth')->name('destroy-perangkat');
-// Route::get('/dashboard/galeri', [ImageGalleryController::class, 'index'])->middleware('auth')->name('dashboard-galeri');
+// Route::resource('/dashboard/kabar-desa/{slug}/edit', KabarDesaController::class)->middleware('auth', 'verified');
 
-Route::post('image-gallery', [ImageGalleryController::class, 'upload'])->middleware('auth')->name('upload-galeri');
-Route::delete('image-gallery/{id}', [ImageGalleryController::class, 'destroy'])->middleware('auth')->name('destroy-galeri');
-Route::get('/dashboard/galeri', [ImageGalleryController::class, 'index'])->middleware('auth')->name('dashboard-galeri');
+Route::get('/dashboard/kabar-desa/CreateSlug', [KabarDesaController::class, 'createSlug'])->middleware('auth');
+Route::get('/dashboard/kabar-desa/{slug}/edit', [KabarDesaController::class, 'showEditSingleKabarDesa'])->middleware('auth', 'verified')->name('dashboard-single-kabar-desa-edit');
+Route::resource('/dashboard/kabar-desa', KabarDesaController::class)->middleware('auth', 'verified');
+Route::get('/dashboard/kabar-desa/{slug}', [KabarDesaController::class, 'showSingleKabarDesa'])->middleware('auth', 'verified')->name('dashboard-single-kabar-desa');
+Route::get('/dashboard/profil-desa-{id}', [DashboardController::class, 'show'])->middleware('auth', 'verified')->name('dashboard-profil-desa');
+Route::post('image-perangkat', [PerangkatDesaController::class, 'upload'])->middleware('auth', 'verified')->name('upload-perangkat');
+Route::delete('image-perangkat/{id}', [PerangkatDesaController::class, 'destroy'])->middleware('auth', 'verified')->name('destroy-perangkat');
+// Route::get('/dashboard/galeri', [ImageGalleryController::class, 'index'])->middleware('auth', 'verified')->name('dashboard-galeri');
+
+Route::post('image-gallery', [ImageGalleryController::class, 'upload'])->middleware('auth', 'verified')->name('upload-galeri');
+Route::delete('image-gallery/{id}', [ImageGalleryController::class, 'destroy'])->middleware('auth', 'verified')->name('destroy-galeri');
+Route::get('/dashboard/galeri', [ImageGalleryController::class, 'index'])->middleware('auth', 'verified')->name('dashboard-galeri');
 Route::get('/kabar-desa/{slug}', [KabarDesaController::class, 'show'])->name('skabar-desa');
 Route::get('/', [home::class, 'index'])->name('home');
 Route::get('/profil-desa', [ProfilDesaController::class, 'index'])->name('profil-desa');
@@ -45,6 +48,6 @@ Route::get('/galeri-desa', [ImageGalleryController::class, 'p_index'])->name('ga
 Route::get('/login',[LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login',[LoginController::class, 'authenticate']);
 Route::post('/logout',[LoginController::class, 'logout'])->name('logout');
-Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth')->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth', 'verified')->name('dashboard');
 
 

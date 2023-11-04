@@ -58,104 +58,60 @@
                                         <h6>{{ $kabarDesa->kategori }}</h6>
                                         <p class="text-dark">{!! $kabarDesa->body !!}</p>
                                     @elseif ($purpose == 'edit')
-                                        <form id="form" method="post" action="#"
+                                        <form id="form" method="post"
+                                            action="{{ route('kabar-desa.update', $kabarDesa->slug) }}"
                                             enctype="multipart/form-data">
                                             @csrf
                                             @method('PUT')
                                             <div class="mb-3">
-                                                <label for="nama_barang" class="form-label">Judul</label>
-                                                <input type="text" class="form-control" maxlength="255"
+                                                <label for="title" class="form-label">Judul</label>
+                                                <input type="text" class="form-control" maxlength="200"
                                                     id="title" name="title" value="{{ $kabarDesa->title }}">
                                             </div>
                                             <div class="mb-3">
-                                                <label class="form-label" for="kategori">Kategori</label>
-                                                <select class="form-select" id="kategori" name="kategori">
-                                                    <option value= "1"
-                                                        {{ $kabarDesa->kategori === "1" ? 'selected' : '' }}>
-                                                        {{ "Kabar Desa" }}</option>
-                                                    <option value= "2"
-                                                        {{ $kabarDesa->kategori === "2" ? 'selected' : '' }}>
-                                                        {{ "Pengumuman" }}</option>
-
-                                                </select>
-                                            </div>
-
-                                            <div class="mb-3">
-                                                <label class="form-label" for="inputGroupSelect02">Nama
-                                                    Ruang
-                                                    penyimpanan</label>
-                                                <select class="form-select" id="inputGroupSelect02"
-                                                    name="lokasi_penyimpanan_id">
-                                                    @foreach ($lokasis as $ruang)
-                                                        <option value={{ $ruang->id }}
-                                                            {{ $barang->lokasi_penyimpanan_id === $ruang->id ? 'selected' : '' }}>
-                                                            {{ $ruang->nama_lokasi }} </option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="kode_barang" class="form-label">Kode
+                                                <label for="slug" class="form-label">Kode
                                                     Barang</label>
-                                                <input type="text" maxlength="25" class="form-control"
-                                                    id="kode_barangE" name="kode_barang"
-                                                    value="{{ $barang->kode_barang }}">
-                                                <p class="fw-lighter">*Double Click untuk membuat kode barang otomatis
-                                                </p>
+                                                <input type="text" class="form-control" id="slug" name="slug"
+                                                    value="{{ $kabarDesa->slug }}" required readonly>
                                                 <p id="sadInE"></p>
                                             </div>
-                                            <label class="form-label">Kondisi</label>
+                                            <div class="mb-3">
+                                                <label class="form-label" for="kategori">Kategori</label><br>
+                                                <select class="form-select" id="kategori" name="kategori">
+                                                    <option value= "1"
+                                                        {{ $kabarDesa->kategori === '1' ? 'selected' : '' }}>
+                                                        {{ 'Kabar Desa' }}</option>
+                                                    <option value= "2"
+                                                        {{ $kabarDesa->kategori === '2' ? 'selected' : '' }}>
+                                                        {{ 'Pengumuman' }}</option>
 
-                                            <div class="input-group mb-3">
-                                                <div class="form-check form-check-inline ms-2">
-                                                    <input class="form-check-input" type="radio" name="kondisi"
-                                                        id="exampleRadios1" value="Bagus"
-                                                        {{ $barang->kondisi == 'Bagus' ? 'checked' : '' }}>
-                                                    <label class="form-check-label" for="exampleRadios1">
-                                                        Bagus
-                                                    </label>
-                                                </div>
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="kondisi"
-                                                        id="exampleRadios3" value="Rusak Ringan"
-                                                        {{ $barang->kondisi == 'Rusak Ringan' ? 'checked' : '' }}>
-                                                    <label class="form-check-label" for="exampleRadios3">
-                                                        Rusak Ringan
-                                                    </label>
-                                                </div>
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="kondisi"
-                                                        id="exampleRadios2" value="Rusak"
-                                                        {{ $barang->kondisi == 'Rusak' ? 'checked' : '' }}>
-                                                    <label class="form-check-label" for="exampleRadios2">
-                                                        Rusak
-                                                    </label>
-                                                </div>
+                                                </select>
                                             </div>
 
+
                                             <div class="mb-3">
-                                                <label for="gambar_barang" class="form-label fw-bold">Gambar
-                                                    Barang</label>
-                                                @if ($barang->gambar_barang)
+                                                <label for="gambar" class="form-label fw-bold">Gambar</label>
+                                                @if ($kabarDesa->image)
                                                     <input type="hidden" id="old_image" name="old_image"
-                                                        value="{{ $barang->gambar_barang }}">
+                                                        value="{{ $barang->image }}">
 
                                                     <input type="hidden" id="hapus_gambar_input"
                                                         name="hapus_gambar_input" value="">
                                                     <br>
                                                     <div id="hapus-gambar">
-                                                        <span class="badge bg-danger m-1"
-                                                            style="cursor: pointer">hapus barang</span>
+                                                        <span class="badge bg-danger m-1" style="cursor: pointer">hapus
+                                                            barang</span>
                                                         <img class="img_prevE img-fluid mb-3 img-fluid img-thumbnail border-dark col-sm-5 d-block"
-                                                            src="{{ asset('storage/' . $barang->gambar_barang) }}">
+                                                            src="{{ asset('/images' . $kabarDesa->image) }}">
                                                     </div>
                                                 @else
                                                     <img class="img_prevE img-fluid mb-3 col-sm-5 d-block">
                                                 @endif
                                                 <input
-                                                    class="form-control border-dark @error('gambar_barang') is-invalid @enderror"
-                                                    type="file" id="gambar_barangE" accept="image/png, image/jpeg"
-                                                    onchange="prevImgE()" name="gambar_barang">
-                                                @error('gambar_barang')
+                                                    class="form-control border-dark @error('image') is-invalid @enderror"
+                                                    type="file" id="gambarE" accept="image/png, image/jpeg"
+                                                    onchange="prevImgE()" name="image">
+                                                @error('image')
                                                     <div class="invalid-feedback">
                                                         {{ $message }}
                                                     </div>
@@ -163,20 +119,14 @@
                                             </div>
 
                                             <div class="mb-3">
-                                                <label for="part" class="form-label fw-bold">Part</label>
-                                                <input id="part" type="hidden" name="part"
-                                                    value="{{ $barang->part }}">
-                                                <trix-editor input="part">
+                                                <label for="part" class="form-label fw-bold">Isi</label>
+                                                <input id="body" type="hidden" name="body"
+                                                    value="{{ $kabarDesa->body }}">
+                                                <trix-editor input="body">
                                                 </trix-editor>
                                             </div>
 
-                                            <div class="mb-3">
-                                                <label for="deskripsi" class="form-label fw-bold">Deskripsi</label>
-                                                <input id="deskripsi" type="hidden" name="deskripsi"
-                                                    value="{{ $barang->deskripsi }}">
-                                                <trix-editor input="deskripsi">
-                                                </trix-editor>
-                                            </div>
+
 
 
 
@@ -209,6 +159,45 @@
     </a>
 
 
+    <script>
+        $('#hapus_gambar_input').val(null);
+        $('#hapus-gambar').show();
+        $('#hapus-gambar').click(function() {
+            $(this).hide()
+            $('#hapus_gambar_input').val(true);
+        });
+
+        function prevImgE() {
+            const input = document.querySelector('#gambarE');
+            const prev = document.querySelector('.img_prevE');
+            prev.style.display = 'block';
+            prev.style.border = 'thin solid #000000';
+            const oFReader = new FileReader();
+            oFReader.readAsDataURL(input.files[0]);
+            oFReader.onload = function(ofREvent) {
+                prev.src = ofREvent.target.result;
+            }
+        }
+
+
+
+
+        var createKode = function() {
+            var title = $('#title').val();
+            $.get("/dashboard/kabar-desa/CreateSlug", {
+                    title: title,
+                })
+                .done(function(data) {
+                    if (data['success']) {
+                        $('#slug').val(data.kode);
+                    } else {
+                        $('#sadIn').html(
+                            'terjadi Error');
+                    }
+                });
+        };
+        $('#title').change(createKode);
+    </script>
 
     <!-- Bootstrap core JavaScript-->
     <script src="{{ asset('dashboard-template/vendor/jquery/jquery.min.js') }}"></script>

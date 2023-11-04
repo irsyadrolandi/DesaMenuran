@@ -2,12 +2,14 @@
 
 namespace App\Models;
 
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class kabarDesa extends Model
 {
     use HasFactory;
+    use Sluggable;
 
     protected $guarded = ['id'];
 
@@ -23,6 +25,16 @@ class kabarDesa extends Model
             return $query->where('kategori', request('kategori'));
         });
 
+    }
+
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => 'title',
+                'unique' => 'true'
+            ]
+        ];
     }
 
     public function getRouteKeyName()
