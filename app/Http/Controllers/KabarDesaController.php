@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use \Cviebrock\EloquentSluggable\Services\SlugService;
 use App\Models\kabarDesa;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use App\Http\Requests\StorekabarDesaRequest;
 use App\Http\Requests\UpdatekabarDesaRequest;
+use \Cviebrock\EloquentSluggable\Services\SlugService;
 
 class KabarDesaController extends Controller
 {
@@ -121,7 +122,7 @@ class KabarDesaController extends Controller
      * @param  \App\Models\kabarDesa  $kabarDesa
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatekabarDesaRequest $request, kabarDesa $kabarDesa)
+    public function update(Request $request, kabarDesa $kabarDesa)
     {
 
         // $rules = [
@@ -131,17 +132,14 @@ class KabarDesaController extends Controller
         //     'slug' => 'required|unique:kabar_desas',
         // ];
 
+        // $input['image'] = time() . '.' . $request->image->getClientOriginalExtension();
+        // $request->image->move(public_path('images'), $input['image']);
         // $validatedData = $request->validate($rules);
-        // if ($kodeBarang != $barang->kode_barang) {
-        //     $rules['kode_barang'] = 'required|unique:barangs';
-        //     $kode_barang = SlugService::createSlug(Barang::class, 'kode_barang', $kodeBarang);
-        //     $validatedData['kode_barang'] = $kode_barang;
-        // }
         // $validatedData['deskripsi'] = $request->deskripsi;
         // $validatedData['part'] = $request->part;
         // if ($request->file("image")) {
-        //     if ($request->old_image !== null && Barang::where('image', $request->old_image)->get('image')->count() == 1) {
-        //         Storage::disk('public')->delete($request->old_image);
+        //     if ($request->old_image !== null ) {
+        //         File::delete(public_path('images/'.$request->old_image));
         //     }
         //     $validatedData["image"] = $request->file("image")->store('toPath', ['disk' => 'public']);
         // }
