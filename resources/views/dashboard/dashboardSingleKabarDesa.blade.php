@@ -37,14 +37,16 @@
                                             <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                            aria-labelledby="dropdownMenuLink">
-                                            <div class="dropdown-header">Option:</div>
-                                            <a class="dropdown-item" href="#"><i class="far fa-edit"></i>
-                                                Edit</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#"><i class="far fa-trash-alt"></i>
-                                                Hapus</a>
-                                        </div>
+                                                aria-labelledby="dropdownMenuLink">
+                                                <div class="dropdown-header">Option:</div>
+                                                <a class="dropdown-item"
+                                                    href="{{ route('kabar-desa.edit', $kabarDesa->slug) }}"><i
+                                                        class="far fa-edit"></i>
+                                                    Edit</a>
+                                                <div class="dropdown-divider"></div>
+                                                <a class="dropdown-item" href="#"><i class="far fa-trash-alt"></i>
+                                                    Hapus</a>
+                                            </div>
                                     </div>
                                 </div>
                                 <div class="card-body">
@@ -66,7 +68,8 @@
                                             <div class="mb-3">
                                                 <label for="title" class="form-label">Judul</label>
                                                 <input type="text" class="form-control" maxlength="200"
-                                                    id="title" name="title" value="{{ $kabarDesa->title }}">
+                                                    id="title" name="title" value="{{ $kabarDesa->title }}"
+                                                    required>
                                             </div>
                                             <div class="mb-3">
                                                 <label for="slug" class="form-label">Kode
@@ -93,16 +96,17 @@
                                                 <label for="gambar" class="form-label fw-bold">Gambar</label>
                                                 @if ($kabarDesa->image)
                                                     <input type="hidden" id="old_image" name="old_image"
-                                                        value="{{ $barang->image }}">
+                                                        value="{{ $kabarDesa->image }}">
 
                                                     <input type="hidden" id="hapus_gambar_input"
                                                         name="hapus_gambar_input" value="">
                                                     <br>
                                                     <div id="hapus-gambar">
-                                                        <span class="badge bg-danger m-1" style="cursor: pointer">hapus
-                                                            barang</span>
-                                                        <img class="img_prevE img-fluid mb-3 img-fluid img-thumbnail border-dark col-sm-5 d-block"
-                                                            src="{{ asset('/images' . $kabarDesa->image) }}">
+                                                        <span class="badge bg-danger m-1 text-light"
+                                                            style="cursor: pointer">hapus
+                                                            gambar</span>
+                                                            <img class="img_prevE img-fluid mb-3 img-fluid img-thumbnail border-dark col-sm-5 d-block"
+                                                                src="{{ asset('storage/' . $kabarDesa->image) }}">
                                                     </div>
                                                 @else
                                                     <img class="img_prevE img-fluid mb-3 col-sm-5 d-block">
@@ -182,9 +186,10 @@
 
 
 
-        var createKode = function() {
+        var createKode = function()
+        {
             var title = $('#title').val();
-            $.get("/dashboard/kabar-desa/CreateSlug", {
+            $.get('/dashboard/kabar-desa/CreateSlug', {
                     title: title,
                 })
                 .done(function(data) {

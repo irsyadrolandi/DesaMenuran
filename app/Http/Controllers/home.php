@@ -22,6 +22,14 @@ class home extends Controller
 
     }
 
+    public function kabardesa()
+    {
+        return view('kabarDesa',[
+            // "kabarDesas" => kabarDesa::all(),
+            "kabardesas" => kabarDesa::latest()->filter(request(['search', 'kategori']))->Paginate(7)->withQueryString()
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -49,9 +57,12 @@ class home extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(kabarDesa $slug)
     {
-        //
+        // dd($slug);
+        return view('singleKabarDesa', [
+            "kabar" => $slug
+        ]);
     }
 
     /**

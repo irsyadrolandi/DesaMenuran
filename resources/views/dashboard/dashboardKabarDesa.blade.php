@@ -1,3 +1,4 @@
+{{-- {{ dd(request()->kategori) }} --}}
 @include('dashboard.template.head')
 
 <body id="page-top">
@@ -32,7 +33,8 @@
                                 <div class="card shadow mb-4">
                                     <div
                                         class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                        <h6 class="m-0 font-weight-bold text-primary">Kabar Desa</h6>
+                                        <h6 class="m-0 font-weight-bold text-primary">
+                                            {{ $kabarDesa->kategori == '1' ? 'Kabar Desa' : 'Pengumuman' }}</h6>
                                         <div class="dropdown no-arrow">
                                             <a class="dropdown-toggle" href="#" role="button"
                                                 id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
@@ -42,7 +44,9 @@
                                             <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                                                 aria-labelledby="dropdownMenuLink">
                                                 <div class="dropdown-header">Option:</div>
-                                                <a class="dropdown-item" href="#"><i class="far fa-edit"></i>
+                                                <a class="dropdown-item"
+                                                    href="{{ route('kabar-desa.edit', $kabarDesa->slug) }}"><i
+                                                        class="far fa-edit"></i>
                                                     Edit</a>
                                                 <div class="dropdown-divider"></div>
                                                 <a class="dropdown-item" href="#"><i class="far fa-trash-alt"></i>
@@ -52,19 +56,23 @@
                                     </div>
                                     <div class="card-body">
                                         <div class="text-center">
-                                            <a href="{{ route('dashboard-single-kabar-desa', $kabarDesa->slug) }}">
-                                                <img class="img-fluid mt-3 mb-4" style="width: 50rem;"
-                                                    src="{{ $kabarDesa->image == '' ? 'https://source.unsplash.com/1200x600/?news' : $kabarDesa->image }}"
+                                            <a href="{{ route('kabar-desa.show', $kabarDesa->slug) }}">
+                                                <img class="img-fluid mt-3 mb-4" style="width: 50rem; height: 25rem"
+                                                    src="{{ $kabarDesa->image == '' ? 'https://source.unsplash.com/1200x600/?news' : asset('storage/' . $kabarDesa->image) }}"
                                                     alt="{{ $kabarDesa->slug }}">
                                             </a>
                                         </div>
-                                        <a href="{{ route('dashboard-single-kabar-desa', $kabarDesa->slug) }}"
-                                            class=  "text-dark">
+                                        <a href="{{ route('kabar-desa.show', $kabarDesa->slug) }}" class=  "text-dark">
                                             <h3>{{ $kabarDesa->title }}</h3>
                                         </a>
-                                        <h6>{{ $kabarDesa->kategori == "1" ? 'Kabar Desa' : 'Pengumuman' }}</h6>
-                                        <p>{!! Str::length($kabarDesa->body) > 500 ? substr($kabarDesa->body, 0, 500) . '...' : $kabarDesa->body !!}</p>
-                                        <a href="{{ route('dashboard-single-kabar-desa', $kabarDesa->slug) }}">Read More
+
+                                        <a class="text-decoration-none"
+                                            href="/dashboard/kabar-desa?kategori={{ $kabarDesa->kategori }}">
+                                            <h6>{{ $kabarDesa->kategori == '1' ? 'Kabar Desa' : 'Pengumuman' }}</h6>
+                                        </a>
+                                        <p>{{ strip_tags(Str::length($kabarDesa->body) > 500 ? substr($kabarDesa->body, 0, 500) . '...' : $kabarDesa->body) }}
+                                        </p>
+                                        <a href="{{ route('kabar-desa.show', $kabarDesa->slug) }}">Read More
                                             &rarr;</a>
                                     </div>
                                 </div>

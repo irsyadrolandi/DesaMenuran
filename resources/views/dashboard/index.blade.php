@@ -26,7 +26,6 @@
                     <h1 class="h3 mb-4 text-gray-800">Dashboard</h1>
 
                     <div class="row">
-
                         @foreach ($profilDesas as $profilDesa)
                             <div class="col-xl-4 col-md-6 mb-4">
                                 <div class="card border-left-primary shadow h-100">
@@ -51,8 +50,54 @@
                                 </div>
                             </div>
                         @endforeach
+                    </div>
+                    <div class="row">
                         @foreach ($kabarDesas as $kabarDesa)
-                            <div class="col-xl-6 col-md-12">
+                        <div class="col-lg-6">
+
+                            <!-- Dropdown Card Example -->
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Dropdown Card Example</h6>
+                                    <div class="dropdown no-arrow">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                                aria-labelledby="dropdownMenuLink">
+                                                <div class="dropdown-header">Option:</div>
+                                                <a class="dropdown-item"
+                                                    href="{{ route('kabar-desa.edit', $kabarDesa->slug) }}"><i
+                                                        class="far fa-edit"></i>
+                                                    Edit</a>
+                                                <div class="dropdown-divider"></div>
+                                                <a class="dropdown-item" href="#"><i class="far fa-trash-alt"></i>
+                                                    Hapus</a>
+                                            </div>
+                                    </div>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div class="text-center">
+                                        <img class="img-fluid mt-3 mb-4" style="width: 50rem;"
+                                            src="https://source.unsplash.com/1200x600/?news"
+                                            alt="...">
+                                    </div>
+                                    <a href="{{ route('kabar-desa.show', $kabarDesa->slug) }}">
+                                        <h3 class=" text-dark">{{ $kabarDesa->title }}</h3>
+                                    </a>
+                                    <h6>{{ $kabarDesa->kategori }}</h6>
+                                    <p>{{  strip_tags(Str::length($kabarDesa->body) > 500 ? substr($kabarDesa->body, 0, 500) . '...' : $kabarDesa->body)  }}</p>
+                                    <a href="{{ route('kabar-desa.show', $kabarDesa->slug) }}">Read More&rarr;</a>
+                                </div>
+                            </div>
+
+
+                        </div>
+                            {{-- <div class="col-lg-6">
                                 <div class="card shadow mb-4">
                                     <div
                                         class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -66,7 +111,9 @@
                                             <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                                                 aria-labelledby="dropdownMenuLink">
                                                 <div class="dropdown-header">Option:</div>
-                                                <a class="dropdown-item" href="{{ route('dashboard-single-kabar-desa-edit', $kabarDesa->slug) }}"><i class="far fa-edit"></i>
+                                                <a class="dropdown-item"
+                                                    href="{{ route('dashboard-single-kabar-desa-edit', $kabarDesa->slug) }}"><i
+                                                        class="far fa-edit"></i>
                                                     Edit</a>
                                                 <div class="dropdown-divider"></div>
                                                 <a class="dropdown-item" href="#"><i class="far fa-trash-alt"></i>
@@ -89,15 +136,13 @@
                                             &rarr;</a>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                         @endforeach
-
-                    </div>
-                    <div class="d-flex justify-content-center">
-
-                        {{ $kabarDesas->links() }}
                     </div>
 
+                </div>
+                <div class="d-flex justify-content-center">
+                    {{ $kabarDesas->links() }}
                 </div>
                 <!-- /.container-fluid -->
 
