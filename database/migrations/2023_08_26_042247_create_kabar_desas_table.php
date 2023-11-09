@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->string('kategori');
             $table->string('image')->nullable();
-            $table->text('exerpt');
             $table->text('body');
             $table->timestamp('publised_at')->nullable();
             $table->timestamps();

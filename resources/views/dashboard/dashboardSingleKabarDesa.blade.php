@@ -52,8 +52,8 @@
                                 <div class="card-body">
                                     @if ($purpose == 'show')
                                         <div class="text-center">
-                                            <img class="img-fluid mt-3 mb-4" style="width: 70rem;"
-                                                src="{{ $kabarDesa->image == '' ? 'https://source.unsplash.com/1200x600/?news' : $kabarDesa->image }}"
+                                            <img class="img-fluid mt-3 mb-4" style="width: 70rem; max-height: 35rem"
+                                                src="{{ $kabarDesa->image == '' ? 'https://source.unsplash.com/1200x600/?news' : asset('storage/'.$kabarDesa->image) }}"
                                                 alt="...">
                                         </div>
                                         <h2 class="text-dark">{{ $kabarDesa->title }}</h2>
@@ -129,15 +129,81 @@
                                                 <trix-editor input="body">
                                                 </trix-editor>
                                             </div>
-
-
-
-
-
                                             <button type="submit" class="btn btn-primary">Simpan</button>
                                         </form>
+                                        @elseif ($purpose == "add")
+                                        <form id="form" method="post"
+                                            action="{{ route('kabar-desa.update', $kabarDesa->slug) }}"
+                                            enctype="multipart/form-data">
+                                            @csrf
+                                            @method('post')
+                                            <div class="mb-3">
+                                                <label for="title" class="form-label">Judul</label>
+                                                <input type="text" class="form-control" maxlength="200"
+                                                    id="title" name="title" value="{{ $kabarDesa->title }}"
+                                                    required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="slug" class="form-label">Slug</label>
+                                                <input type="text" class="form-control" id="slug" name="slug"
+                                                    value="{{ $kabarDesa->slug }}" required readonly>
+                                                <p id="sadInE"></p>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label" for="kategori">Kategori</label><br>
+                                                <select class="form-select" id="kategori" name="kategori">
+                                                    <option value= "1"
+                                                        {{ $kabarDesa->kategori === '1' ? 'selected' : '' }}>
+                                                        {{ 'Kabar Desa' }}</option>
+                                                    <option value= "2"
+                                                        {{ $kabarDesa->kategori === '2' ? 'selected' : '' }}>
+                                                        {{ 'Pengumuman' }}</option>
 
+                                                </select>
+                                            </div>
+
+
+                                            <div class="mb-3">
+                                                <label for="gambar" class="form-label fw-bold">Gambar</label>
+                                                @if ($kabarDesa->image)
+                                                    <input type="hidden" id="old_image" name="old_image"
+                                                        value="{{ $kabarDesa->image }}">
+
+                                                    <input type="hidden" id="hapus_gambar_input"
+                                                        name="hapus_gambar_input" value="">
+                                                    <br>
+                                                    <div id="hapus-gambar">
+                                                        <span class="badge bg-danger m-1 text-light"
+                                                            style="cursor: pointer">hapus
+                                                            gambar</span>
+                                                            <img class="img_prevE img-fluid mb-3 img-fluid img-thumbnail border-dark col-sm-5 d-block"
+                                                                src="{{ asset('storage/' . $kabarDesa->image) }}">
+                                                    </div>
+                                                @else
+                                                    <img class="img_prevE img-fluid mb-3 col-sm-5 d-block">
+                                                @endif
+                                                <input
+                                                    class="form-control border-dark @error('image') is-invalid @enderror"
+                                                    type="file" id="gambarE" accept="image/png, image/jpeg"
+                                                    onchange="prevImgE()" name="image">
+                                                @error('image')
+                                                    <div class="invalid-feedback">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="part" class="form-label fw-bold">Isi</label>
+                                                <input id="body" type="hidden" name="body"
+                                                    value="{{ $kabarDesa->body }}">
+                                                <trix-editor input="body">
+                                                </trix-editor>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Simpan</button>
+                                        </form>
                                     @endif
+
                                 </div>
                             </div>
                         </div>

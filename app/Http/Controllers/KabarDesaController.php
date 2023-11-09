@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\kabarDesa;
+use Illuminate\Support\Arr;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
@@ -20,16 +21,14 @@ class KabarDesaController extends Controller
      */
     public function index()
     {
-        if(request()->kategori == 1){
+        if (request()->kategori == 1) {
             $title = "Kabar Desa";
-        }
-        elseif(request()->kategori == 2){
+        } elseif (request()->kategori == 2) {
             $title = "Pengumuman Desa";
-        }
-        else{
+        } else {
             $title = "Semua Kabar Desa";
         }
-        return view('dashboard.dashboardKabarDesa',[
+        return view('dashboard.dashboardKabarDesa', [
             "title" => $title,
             "kabarDesas" => kabarDesa::latest()->filter(request(['kategori']))->paginate(4)
         ]);
@@ -42,7 +41,7 @@ class KabarDesaController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.dashboardKabarDesaCreate');
     }
 
     /**
@@ -51,9 +50,23 @@ class KabarDesaController extends Controller
      * @param  \App\Http\Requests\StorekabarDesaRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorekabarDesaRequest $request)
+    public function store(Request $request)
     {
-        //
+        $rules = [
+            'title' => 'required|max:255',
+            'kategori' => 'required',
+            'image' => 'image|file|max:1024',
+            'slug' => 'required|unique:kabar_desas',
+            'body' => 'required'
+        ];
+        $validatedData = $request->validate($rules);
+        $validatedData['body'] = $request->body;
+        if ($request->file('image')) {
+            $validatedData['image'] = $request->file('image')->store('kabar-image');
+        }
+
+        kabarDesa::create($validatedData);
+        return Redirect::to('/dashboard/kabar-desa')->with('success', 'Kabar Desa berhasil di Upload');
     }
 
     /**
@@ -65,7 +78,7 @@ class KabarDesaController extends Controller
     public function show(kabarDesa $kabarDesa)
     {
         // dd($kabarDesa);
-        return view('dashboard.dashboardSingleKabarDesa',[
+        return view('dashboard.dashboardSingleKabarDesa', [
             "title" => $kabarDesa->kategori,
             "purpose" => "show",
             "kabarDesa" => kabarDesa::where('slug', $kabarDesa->slug)->first()
@@ -83,18 +96,18 @@ class KabarDesaController extends Controller
 
     public function showKabarDesa()
     {
-            return view('dashboard.dashboardKabarDesa',[
-                "title" => "Kabar Desa",
-                "kabarDesas" => kabarDesa::filter(request(['search', 'kategori']))->latest()->paginate(4)
-            ]);
+        return view('dashboard.dashboardKabarDesa', [
+            "title" => "Kabar Desa",
+            "kabarDesas" => kabarDesa::filter(request(['search', 'kategori']))->latest()->paginate(4)
+        ]);
     }
 
     public function showPengumumanDesa()
     {
-            return view('dashboard.dashboardKabarDesa',[
-                "title" => "Pengumuman",
-                "kabarDesas" => kabarDesa::where('kategori', '=', '2')->latest()->paginate(4)
-            ]);
+        return view('dashboard.dashboardKabarDesa', [
+            "title" => "Pengumuman",
+            "kabarDesas" => kabarDesa::where('kategori', '=', '2')->latest()->paginate(4)
+        ]);
     }
 
 
@@ -106,7 +119,7 @@ class KabarDesaController extends Controller
      */
     public function edit(kabarDesa $kabarDesa)
     {
-        return view('dashboard.dashboardSingleKabarDesa',[
+        return view('dashboard.dashboardSingleKabarDesa', [
             "title" => "edit $kabarDesa->kategori",
             "purpose" => "edit",
             "kabarDesa" => kabarDesa::where('slug', $kabarDesa->slug)->first()
@@ -123,29 +136,34 @@ class KabarDesaController extends Controller
     public function update(Request $request, kabarDesa $kabarDesa)
     {
 
-        dd($request->hapus_gambar_input);
-        // dd(Storage::path($request->old_image));
+        // dd($request);
+        // $url = Storage::disk('public')->delete($request->old_image);
+        // dd($url);
         $rules = [
             'title' => 'required|max:255',
             'kategori' => 'required',
             'image' => 'image|file|max:1024',
-            'slug' => 'required|unique:kabar_desas',
         ];
+        if ($request->slug !== $kabarDesa->slug) {
+            $rules['slug'] = 'required|unique:kabar_desas';
+        }
+        // dd($rules);
         $validatedData = $request->validate($rules);
         $validatedData['body'] = $request->body;
-        if($request->file('image')){
-            if($request->old_image !== null){
+        if ($request->file('image')) {
+            if ($request->old_image !== null) {
                 Storage::disk('public')->delete($request->old_image);
             }
             $validatedData['image'] = $request->file('image')->store('kabar-image');
         }
 
         if ($request->hapus_gambar_input) {
-            if ($request->old_image !== null ) {
+            if ($request->old_image !== null) {
                 Storage::disk('public')->delete($request->old_image);
             }
             $validatedData['image'] = null;
         }
+        // dd($validatedData);
 
 
         kabarDesa::where('id', $kabarDesa->id)->update($validatedData);

@@ -20,7 +20,6 @@ class KabarDesaFactory extends Factory
             'title' => $this->faker->sentence(mt_rand(2,8)),
             'slug' => $this->faker->slug(),
             'kategori' => mt_rand(1,2),
-            'exerpt' => $this->faker->paragraph(),
             'body' => $this->faker->paragraph(100),
         ];
     }
