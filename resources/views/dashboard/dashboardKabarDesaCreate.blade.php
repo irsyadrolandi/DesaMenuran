@@ -91,7 +91,7 @@
                                         <div class="mb-3">
                                             <label for="part" class="form-label fw-bold">Isi</label>
                                             <input id="body" type="hidden" name="body"
-                                                value="" required>
+                                                value="" requir>
                                             <trix-editor input="body">
                                             </trix-editor>
                                         </div>
