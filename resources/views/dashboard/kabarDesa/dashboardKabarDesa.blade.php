@@ -24,6 +24,25 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
+                    @if (session()->has('success'))
+                    {{-- <div class="alert alert-primary border-dark alert-dismissible fade show my-3" role="alert">
+                        {{ session('success') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div> --}}
+                    <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                        <strong>Succes!</strong> {{ session('success') }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                @endif
+
+                @if ($errors->any())
+                    {!! implode(
+                        '',
+                        $errors->all(' <div class="alert alert-danger alert-dismissible fade show" role="alert">:message<button type="button" class="close" data-bs-dismiss="alert" aria-label="Close"></button> </div>'),
+                    ) !!}
+                @endif
                     <h1 class="h3 mb-4 text-gray-800">{{ $title }}</h1>
 
                     <div class="row">
@@ -49,8 +68,12 @@
                                                         class="far fa-edit"></i>
                                                     Edit</a>
                                                 <div class="dropdown-divider"></div>
-                                                <a class="dropdown-item" href="#"><i class="far fa-trash-alt"></i>
-                                                    Hapus</a>
+                                                <form action="{{ route('kabar-desa.destroy', $kabarDesa) }}" method="POST">
+                                                    @method('DELETE')
+                                                    @csrf
+                                                    <button class="dropdown-item btn bg-link" id="hapus"><i
+                                                            class="far fa-trash-alt"></i> Hapus</button>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
@@ -70,7 +93,7 @@
                                             href="/dashboard/kabar-desa?kategori={{ $kabarDesa->kategori }}">
                                             <h6>{{ $kabarDesa->kategori == '1' ? 'Kabar Desa' : 'Pengumuman' }}</h6>
                                         </a>
-                                        <p>{{ strip_tags(Str::length($kabarDesa->body) > 500 ? substr($kabarDesa->body, 0, 500) . '...' : $kabarDesa->body) }}
+                                        <p>{!! str::length($kabarDesa->body) > 500 ? substr($kabarDesa->body, 0, 500) . '...' : $kabarDesa->body) !!}
                                         </p>
                                         <a href="{{ route('kabar-desa.show', $kabarDesa->slug) }}">Read More
                                             &rarr;</a>

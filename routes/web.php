@@ -24,10 +24,10 @@ use App\Models\perangkatDesa;
 */
 
 
+Route::resource('/dashboard/profil-desa', ProfilDesaController::class)->middleware('auth');
 // Route::get('/dashboard/kabar-desa/{slug}', [KabarDesaController::class, 'showSingleKabarDesa'])->name('dashboard-single-kabar-desa');
 Route::get('/dashboard/kabar-desa/CreateSlug', [KabarDesaController::class, 'createSlug'])->middleware('auth');
 Route::resource('/dashboard/kabar-desa', KabarDesaController::class)->middleware('auth');
-Route::get('/dashboard/profil-desa-{id}', [DashboardController::class, 'show'])->middleware('auth', 'verified')->name('dashboard-profil-desa');
 Route::post('image-perangkat', [PerangkatDesaController::class, 'upload'])->middleware('auth', 'verified')->name('upload-perangkat');
 Route::delete('image-perangkat/{id}', [PerangkatDesaController::class, 'destroy'])->middleware('auth', 'verified')->name('destroy-perangkat');
 

@@ -106,9 +106,7 @@
                                                                     method="POST">
 
                                                                     <input type="hidden" name="_method" value="delete">
-
-                                                                    {!! csrf_field() !!}
-
+                                                                    @csrf
                                                                     <button type="submit"
                                                                         class=" btn btn-danger btn-sm"><i
                                                                             class="far fa-times-circle fa-sm"></i></button>
@@ -119,7 +117,7 @@
                                                                 @if ($image->image == null)
                                                                     <img src="{{ asset('assets/images/default.jpg') }}" style="height: 300px" alt="{{ $image->jabatan }}">
                                                                 @else
-                                                                <img style="height: 300px" src="/images/{{ $image->image }}"
+                                                                <img style="height: 300px" src="{{ asset('storage/'.$image->image)  }}"
                                                                     data-target="#indicators"
                                                                     data-slide-to="{{ $image->id }}"
                                                                     alt="{{ $image->jabatan }}" />

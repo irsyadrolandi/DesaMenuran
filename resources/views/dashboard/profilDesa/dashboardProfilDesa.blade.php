@@ -40,14 +40,14 @@
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                                         aria-labelledby="dropdownMenuLink">
-                                        <a class="dropdown-item" href="#">Edit</a>
+                                        <a class="dropdown-item" href="{{ route('profil-desa.edit', $profilDesa->id) }}">Edit</a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" href="#">Hapus</a>
                                     </div>
                                 </div>
                             </div>
                             <!-- Card Body -->
-                            <div class="card-body">{{ $profilDesa->body }}
+                            <div class="card-body">{!! $profilDesa->body !!}
                             </div>
                         </div>
                     </div>

@@ -28,7 +28,7 @@ class KabarDesaController extends Controller
         } else {
             $title = "Semua Kabar Desa";
         }
-        return view('dashboard.dashboardKabarDesa', [
+        return view('dashboard.kabarDesa.dashboardKabarDesa', [
             "title" => $title,
             "kabarDesas" => kabarDesa::latest()->filter(request(['kategori']))->paginate(4)
         ]);
@@ -41,7 +41,7 @@ class KabarDesaController extends Controller
      */
     public function create()
     {
-        return view('dashboard.dashboardKabarDesaCreate');
+        return view('dashboard.kabarDesa.dashboardKabarDesaCreate');
     }
 
     /**
@@ -78,37 +78,21 @@ class KabarDesaController extends Controller
     public function show(kabarDesa $kabarDesa)
     {
         // dd($kabarDesa);
-        return view('dashboard.dashboardSingleKabarDesa', [
-            "title" => $kabarDesa->kategori,
-            "purpose" => "show",
+        if (request()->kategori == 1) {
+            $title = "Kabar Desa";
+        } elseif (request()->kategori == 2) {
+            $title = "Pengumuman Desa";
+        } else {
+            $title = "Semua Kabar Desa";
+        }
+        return view('dashboard.kabarDesa.dashboardKabarDesaShow', [
+            "title" => $title,
             "kabarDesa" => kabarDesa::where('slug', $kabarDesa->slug)->first()
         ]);
     }
 
-    // public function showAllKabarDesa()
-    // {
-    //         return view('dashboard.dashboardKabarDesa',[
-    //             "title" => "Kabar Desa",
-    //             "kabarDesas" => kabarDesa::latest()->paginate(4)
-    //         ]);
 
-    // }
 
-    public function showKabarDesa()
-    {
-        return view('dashboard.dashboardKabarDesa', [
-            "title" => "Kabar Desa",
-            "kabarDesas" => kabarDesa::filter(request(['search', 'kategori']))->latest()->paginate(4)
-        ]);
-    }
-
-    public function showPengumumanDesa()
-    {
-        return view('dashboard.dashboardKabarDesa', [
-            "title" => "Pengumuman",
-            "kabarDesas" => kabarDesa::where('kategori', '=', '2')->latest()->paginate(4)
-        ]);
-    }
 
 
     /**
@@ -119,9 +103,8 @@ class KabarDesaController extends Controller
      */
     public function edit(kabarDesa $kabarDesa)
     {
-        return view('dashboard.dashboardSingleKabarDesa', [
+        return view('dashboard.kabarDesa.dashboardKabarDesaEdit', [
             "title" => "edit $kabarDesa->kategori",
-            "purpose" => "edit",
             "kabarDesa" => kabarDesa::where('slug', $kabarDesa->slug)->first()
         ]);
     }
@@ -135,10 +118,6 @@ class KabarDesaController extends Controller
      */
     public function update(Request $request, kabarDesa $kabarDesa)
     {
-
-        // dd($request);
-        // $url = Storage::disk('public')->delete($request->old_image);
-        // dd($url);
         $rules = [
             'title' => 'required|max:255',
             'kategori' => 'required',
@@ -167,7 +146,7 @@ class KabarDesaController extends Controller
 
 
         kabarDesa::where('id', $kabarDesa->id)->update($validatedData);
-        return Redirect::to('/dashboard/kabar-desa')->with('success', 'Barang berhasil diedit');
+        return Redirect::to('/dashboard/kabar-desa')->with('success', 'Berita berhasil diedit');
     }
 
     /**
@@ -178,7 +157,12 @@ class KabarDesaController extends Controller
      */
     public function destroy(kabarDesa $kabarDesa)
     {
-        //
+        // dd($kabarDesa);
+        if($kabarDesa->image !== null){
+            Storage::disk('public')->delete($kabarDesa->image);
+        }
+        kabarDesa::destroy($kabarDesa->id);
+        return Redirect::to(url('/dashboard/kabar-desa'))->with('success', 'Berita Berhasil dihapus');
     }
 
 

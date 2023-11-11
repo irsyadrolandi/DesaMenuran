@@ -46,7 +46,7 @@
                                         <div class="row no-gutters align-items-center">
                                             <div class="col mr-2">
                                                 <a class="h5 mb-0 font-weight-bold text-gray-800 text-decoration-none stretched-link"
-                                                    href="{{ route('dashboard-profil-desa', $profilDesa->id) }}">{{ $profilDesa->kategori }}</a>
+                                                    href="{{ route('profil-desa.show', $profilDesa->id) }}">{{ $profilDesa->kategori }}</a>
                                             </div>
                                             <div class="col-auto">
                                                 <i class="fas fa-university fa-2x text-gray-300"></i>

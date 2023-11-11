@@ -34,17 +34,17 @@
             aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item {{ Request::is('dashboard/profil-desa-1*') ? 'active' : '' }}"
-                    href="{{ route('dashboard-profil-desa', 1) }}">Gambaran Umum</a>
+                    href="{{ route('profil-desa.show', 1) }}">Gambaran Umum</a>
                 <a class="collapse-item {{ Request::is('dashboard/profil-desa-2*') ? 'active' : '' }}"
-                    href="{{ route('dashboard-profil-desa', 2) }}">Sejarah</a>
+                    href="{{ route('profil-desa.show', 2) }}">Sejarah</a>
                 <a class="collapse-item {{ Request::is('dashboard/profil-desa-3*') ? 'active' : '' }}"
-                    href="{{ route('dashboard-profil-desa', 3) }}">Demografi</a>
+                    href="{{ route('profil-desa.show', 3) }}">Demografi</a>
                 <a class="collapse-item {{ Request::is('dashboard/profil-desa-4*') ? 'active' : '' }}"
-                    href="{{ route('dashboard-profil-desa', 4) }}">Visi & Misi</a>
+                    href="{{ route('profil-desa.show', 4) }}">Visi & Misi</a>
                 <a class="collapse-item {{ Request::is('dashboard/profil-desa-5*') ? 'active' : '' }}"
-                    href="{{ route('dashboard-profil-desa', 5) }}">Perangkat Desa</a>
+                    href="{{ route('profil-desa.show', 5) }}">Perangkat Desa</a>
                 <a class="collapse-item {{ Request::is('dashboard/profil-desa-6*') ? 'active' : '' }}"
-                    href="{{ route('dashboard-profil-desa', 6) }}">Lembaga</a>
+                    href="{{ route('profil-desa.show', 6) }}">Lembaga</a>
             </div>
         </div>
     </li>

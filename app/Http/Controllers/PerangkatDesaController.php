@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\perangkatDesa;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\StoreperangkatDesaRequest;
 use App\Http\Requests\UpdateperangkatDesaRequest;
 
@@ -44,15 +45,14 @@ class PerangkatDesaController extends Controller
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
         if ($request->image != null) {
-            $input['image'] = time() . '.' . $request->image->getClientOriginalExtension();
-            $request->image->move(public_path('images'), $input['image']);
+            $input['image'] = $request->file('image')->store('perangkat-image');
         }
 
         $input['nama'] = $request->nama;
         $input['jabatan'] = $request->jabatan;
+// dd($input);
         perangkatDesa::create($input);
-        return back()
-            ->with('success', 'Image Uploaded successfully.');
+        return back()->with('success', 'Perangkat Desa Berhasil Di upload');
     }
 
     /**
@@ -97,11 +97,10 @@ class PerangkatDesaController extends Controller
      */
     public function destroy(perangkatDesa $id)
     {
-        if(File::exists(public_path('images/'.$id->image))){
-            File::delete(public_path('images/'.$id->image));
+        if($id->image !== null){
+            Storage::disk('public')->delete($id->image);
         }
         perangkatDesa::find($id->id)->delete();
-        return back()
-            ->with('success', 'Image removed successfully.');
+        return back()->with('success', 'Perangkat Desa Berhasil di hapus');
     }
 }

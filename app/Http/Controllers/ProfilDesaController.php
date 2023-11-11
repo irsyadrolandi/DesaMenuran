@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\profilDesa;
+use Illuminate\Http\Request;
+use App\Models\perangkatDesa;
+use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\StoreprofilDesaRequest;
 use App\Http\Requests\UpdateprofilDesaRequest;
-use App\Models\perangkatDesa;
 
 class ProfilDesaController extends Controller
 {
@@ -55,7 +57,15 @@ class ProfilDesaController extends Controller
      */
     public function show(profilDesa $profilDesa)
     {
-        //
+        if ($profilDesa->id == '5') {
+            $images = perangkatDesa::get();
+            return view('dashboard.dashboardPerangkatDesa',compact('images')
+        );
+        } else {
+            return view('dashboard.profilDesa.dashboardProfilDesa',[
+                "profilDesa" => $profilDesa
+        ]);
+        }
     }
 
     /**
@@ -66,7 +76,9 @@ class ProfilDesaController extends Controller
      */
     public function edit(profilDesa $profilDesa)
     {
-        //
+        return view('dashboard.profilDesa.dashboardProfilDesaEdit',[
+            "profilDesa" => $profilDesa
+        ]);
     }
 
     /**
@@ -76,9 +88,16 @@ class ProfilDesaController extends Controller
      * @param  \App\Models\profilDesa  $profilDesa
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateprofilDesaRequest $request, profilDesa $profilDesa)
+    public function update(Request $request, profilDesa $profilDesa)
     {
-        //
+        $this->validate($request, [
+            'body' => 'required',
+        ]);
+        $input['body'] = $request->body;
+        // dd($input);
+        profilDesa::where('id', $profilDesa->id)->update($input);
+        // dd($profilDesa->id);
+        return Redirect::to('/dashboard/profil-desa/'.$profilDesa->id)->with('success', 'Profil Desa berhasil diedit');
     }
 
     /**

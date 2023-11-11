@@ -20,15 +20,7 @@ class DashboardController extends Controller
 
     public function show(profilDesa $id)
     {
-        if ($id->id == '5') {
-            $images = perangkatDesa::get();
-            return view('dashboard.dashboardPerangkatDesa',compact('images')
-        );
-        } else {
-            return view('dashboard.dashboardProfilDesa',[
-                "profilDesa" => $id
-        ]);
-        }
+
     }
 
     // public function showKabarDesa()

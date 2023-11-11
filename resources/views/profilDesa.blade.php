@@ -185,7 +185,7 @@
                                                                                                                 @if ($image->image == null)
                                                                                                                     <img src="{{ asset('assets/images/default.jpg') }}" style="height: 300px" alt="{{ $image->jabatan }}">
                                                                                                                 @else
-                                                                                                                <img style="height: 300px" src="/images/{{ $image->image }}"
+                                                                                                                <img style="height: 300px" src="{{ asset('storage/'.$image->image)  }}"
                                                                                                                     data-target="#indicators"
                                                                                                                     data-slide-to="{{ $image->id }}"
                                                                                                                     alt="{{ $image->jabatan }}" />
