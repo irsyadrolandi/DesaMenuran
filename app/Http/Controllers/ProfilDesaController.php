@@ -59,7 +59,11 @@ class ProfilDesaController extends Controller
     {
         if ($profilDesa->id == '5') {
             $images = perangkatDesa::get();
-            return view('dashboard.dashboardPerangkatDesa',compact('images')
+
+            return view('dashboard.profilDesa.dashboardPerangkatDesa',[
+                "profilDesa" => $profilDesa
+            ],
+            compact('images')
         );
         } else {
             return view('dashboard.profilDesa.dashboardProfilDesa',[
@@ -92,11 +96,11 @@ class ProfilDesaController extends Controller
     {
         $this->validate($request, [
             'body' => 'required',
+            'kategori' => 'required'
         ]);
         $input['body'] = $request->body;
-        // dd($input);
+        $input['kategori'] = $request->kategori;
         profilDesa::where('id', $profilDesa->id)->update($input);
-        // dd($profilDesa->id);
         return Redirect::to('/dashboard/profil-desa/'.$profilDesa->id)->with('success', 'Profil Desa berhasil diedit');
     }
 

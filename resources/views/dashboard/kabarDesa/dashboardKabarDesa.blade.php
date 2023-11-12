@@ -93,7 +93,7 @@
                                             href="/dashboard/kabar-desa?kategori={{ $kabarDesa->kategori }}">
                                             <h6>{{ $kabarDesa->kategori == '1' ? 'Kabar Desa' : 'Pengumuman' }}</h6>
                                         </a>
-                                        <p>{!! str::length($kabarDesa->body) > 500 ? substr($kabarDesa->body, 0, 500) . '...' : $kabarDesa->body) !!}
+                                        <p>{{ strip_tags(substr($kabarDesa->body, 0, 500). '...') }}
                                         </p>
                                         <a href="{{ route('kabar-desa.show', $kabarDesa->slug) }}">Read More
                                             &rarr;</a>

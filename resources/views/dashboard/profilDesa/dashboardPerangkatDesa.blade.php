@@ -33,17 +33,17 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Galeri</h1>
+                    <h1 class="h3 mb-4 text-gray-800">Profil Desa</h1>
 
                     <div class="row">
 
                         <div class="card shadow mb-4 w-100">
                             <!-- Card Header - Dropdown -->
                             <div class="card-header py-3">
-                                <form action="{{ route('upload-perangkat') }}" class="form-image-upload" method="POST"
-                                    enctype="multipart/form-data">
 
-
+                                <form action="{{ route('upload-perangkat') }}" class="form-image-upload rounded" method="POST"
+                                enctype="multipart/form-data">
+                                <h4>{{ $profilDesa->kategori }}</h4>
                                     {!! csrf_field() !!}
                                     @if (count($errors) > 0)
                                         <div class="alert alert-danger">

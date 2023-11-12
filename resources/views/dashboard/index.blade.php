@@ -93,8 +93,12 @@
                                                         class="far fa-edit"></i>
                                                     Edit</a>
                                                 <div class="dropdown-divider"></div>
-                                                <a class="dropdown-item" href="#"><i class="far fa-trash-alt"></i>
-                                                    Hapus</a>
+                                                <form action="{{ route('kabar-desa.destroy', $kabarDesa->slug) }}" method="POST">
+                                                    @method('DELETE')
+                                                    @csrf
+                                                    <button class="dropdown-item btn bg-link" id="hapus"><i
+                                                            class="far fa-trash-alt"></i> Hapus</button>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>

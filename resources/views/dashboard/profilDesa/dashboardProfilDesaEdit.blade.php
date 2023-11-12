@@ -47,6 +47,13 @@
                                     @method('PUT')
 
                                     <div class="mb-3">
+                                        <label for="kategori" class="form-label">Judul</label>
+                                        <input type="text" class="form-control" maxlength="200"
+                                            id="kategori" name="kategori" value="{{ $profilDesa->kategori }}"
+                                            required>
+                                    </div>
+
+                                    <div class="mb-3">
                                         <label for="part" class="form-label fw-bold">Isi</label>
                                         <input id="body" type="hidden" name="body"
                                             value="{{ $profilDesa->body }}">
