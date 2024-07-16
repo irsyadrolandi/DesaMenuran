@@ -115,7 +115,7 @@ https://templatemo.com/tm-564-plot-listing
 
                 <div class="col-lg-10 ">
                     <div class="card mb-3">
-                        <img src="/assets/images/listing-01.jpg" class="card-img-top" alt="...">
+                        <img src="{{ Storage::url('kabar-image/' . $kabar->image) }}"  class="card-img-top" alt="...">
                         <div class="card-header text-center">
                             <h3 class="m-2 card-title">{{ $kabar->title }}</h3>
                         </div>

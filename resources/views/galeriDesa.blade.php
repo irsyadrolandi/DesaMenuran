@@ -2,9 +2,7 @@
 @section('contents')
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
-
 
     <style>
         .close {
@@ -44,11 +42,8 @@
                         <div class="row">
 
                             <div class="card shadow mb-4 mt-3 w-100">
-
                                 <!-- Card Body -->
                                 <div class="card-body">
-
-
                                     <div class="row">
                                         <div class="container">
                                             @if ($images->count())
@@ -56,51 +51,42 @@
                                                     @foreach ($images as $image)
                                                         <div class="col-12 col-md-6 col-lg-3 mt-3">
                                                             <div class="card shadow-lg align-self-start">
-                                                                <div
-                                                                    class="card-header bg-primary text-light d-flex justify-content-between">
-                                                                    <div class=" align-self-start">
+                                                                <div class="card-header bg-primary text-light d-flex justify-content-between">
+                                                                    <div class="align-self-start">
                                                                         {{ $image->title }}
                                                                     </div>
-
                                                                 </div>
                                                                 <div data-bs-toggle="modal" data-bs-target="#lightbox">
-                                                                    <img class="gambar" src="/images/{{ $image->image }}"
+                                                                    <img class="gambar" src="{{ asset('galeri/' . $image->image) }}"
                                                                         data-target="#indicators"
                                                                         data-gambar-name="{{ $image->title }}"
                                                                         data-slide-to="{{ $image->id }}"
-                                                                        alt="a" />
+                                                                        alt="{{ $image->title }}" />
                                                                 </div>
                                                             </div>
-
                                                         </div>
                                                     @endforeach
                                                 </div>
-                                                @else
+                                            @else
                                                 <div class="d-flex justify-content-center">
                                                     <h2>GALERI KOSONG</h2>
                                                 </div>
                                             @endif
 
-
-
-
                                             <!-- Modal -->
-                                            <div class="modal fade" id="lightbox" tabindex="-1" aria-labelledby="lightbox"
-                                                aria-hidden="true">
+                                            <div class="modal fade" id="lightbox" tabindex="-1" aria-labelledby="lightbox" aria-hidden="true">
                                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                                     <div class="modal-content bg-primary">
                                                         <div class="modal-header">
                                                             <h5 class="modal-title" id="exampleModalLabel"></h5>
-                                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                                aria-label="Close"></button>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                         </div>
-                                                        <div >
+                                                        <div>
                                                             <div>
                                                                 @foreach ($images as $image)
                                                                     <div class="item visually-hidden" id="{{ $image->id }}">
-                                                                        <img class="d-block w-100"
-                                                                            src="/images/{{ $image->image }}"
-                                                                            alt="{{ $image->id }}">
+                                                                        <img class="d-block w-100" src="{{ asset('galeri/' . $image->image) }}"
+                                                                            alt="{{ $image->title }}">
                                                                     </div>
                                                                 @endforeach
                                                             </div>
@@ -110,9 +96,7 @@
                                             </div>
                                         </div>
                                     </div>
-
                                 </div> <!-- row / end -->
-
                             </div> <!-- container / end -->
                         </div>
                     </div>
@@ -120,20 +104,22 @@
             </div>
         </div>
     </div>
-    </div>
 
     <script>
         $(document).ready(function() {
             $('.gambar').on('click', function() {
-                $g = $(this);
-                $gam = $('#' + $g.data('slide-to')).removeClass('visually-hidden');
-                $('#exampleModalLabel').append($g.data('gambar-name'))
-
+                const g = $(this);
+                const targetId = g.data('slide-to');
+                const targetImage = $('#' + targetId);
+                
+                targetImage.removeClass('visually-hidden');
+                $('#exampleModalLabel').text(g.data('gambar-name'));
             });
+
             $('#lightbox').on('hide.bs.modal', function() {
                 $('.item').addClass('visually-hidden');
                 $('#exampleModalLabel').empty();
-            })
+            });
         });
     </script>
 @endsection

@@ -51,28 +51,28 @@ class KabarDesaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-{
-    $rules = [
-        'title' => 'required|max:255',
-        'kategori' => 'required',
-        'image' => 'image|file|max:1024',
-        'slug' => 'required|unique:kabar_desas',
-        'body' => 'required'
-    ];
-    
-    $validatedData = $request->validate($rules);
-    $validatedData['body'] = $request->body;
-    
-    if ($request->file('image')) {
-        // $path = $request->file('image')->store('kabar-ima');
-        $path = $request->file('image')->store('kabar-image', 'public');
-        $validatedData['image'] = basename($path);  // Hanya simpan nama file
-    }
+    {
+        $rules = [
+            'title' => 'required|max:255',
+            'kategori' => 'required',
+            'image' => 'image|file|max:1024',
+            'slug' => 'required|unique:kabar_desas',
+            'body' => 'required'
+        ];
+        
+        $validatedData = $request->validate($rules);
+        $validatedData['body'] = $request->body;
+        
+        if ($request->file('image')) {
+            // $path = $request->file('image')->store('kabar-ima');
+            $path = $request->file('image')->store('kabar-image', 'public');
+            $validatedData['image'] = basename($path);  // Hanya simpan nama file
+        }
 
-    kabarDesa::create($validatedData);
-    
-    return Redirect::to('/dashboard/kabar-desa')->with('success', 'Kabar Desa berhasil di Upload');
-}
+        kabarDesa::create($validatedData);
+        
+        return Redirect::to('/dashboard/kabar-desa')->with('success', 'Kabar Desa berhasil di Upload');
+    }
 
 
     /**

@@ -24,17 +24,25 @@ class ImageGalleryController extends Controller
 
     public function upload(Request $request)
     {
-    	$this->validate($request, [
-    		'title' => 'required',
+        $this->validate($request, [
+            'title' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-        $input['image'] = time().'.'.$request->image->getClientOriginalExtension();
-        $request->image->move(public_path('images'), $input['image']);
+    
+        // Membuat nama file unik dengan menambahkan timestamp
+        $imageName = time().'.'.$request->image->getClientOriginalExtension();
+    
+        // Pindahkan file gambar ke direktori 'public/galeri'
+        $request->image->move(public_path('galeri'), $imageName);
+    
+        // Menyimpan data gambar ke dalam database
+        $input['image'] = $imageName;
         $input['title'] = $request->title;
         ImageGallery::create($input);
-    	return back()
-    		->with('success','Image Uploaded successfully.');
+    
+        return back()->with('success', 'Image Uploaded successfully.');
     }
+    
 
     public function destroy(ImageGallery $id)
     {

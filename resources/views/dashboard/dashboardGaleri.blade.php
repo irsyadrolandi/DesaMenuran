@@ -118,7 +118,7 @@
                                                                 </form>
                                                             </div>
                                                             <div data-toggle="modal" data-target="#lightbox">
-                                                                <img class="gambar" src="/images/{{ $image->image }}"
+                                                                <img class="gambar" src="{{ asset('galeri/' . $image->image) }}"
                                                                     data-target="#indicators"
                                                                     data-slide-to="{{ $image->id }}"
                                                                     alt="a" />

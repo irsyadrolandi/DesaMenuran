@@ -64,7 +64,7 @@
                                         <div class="listing-item row">
                                             <div class="col-lg-5 left-image">
                                                 <a href="{{ route('skabar-desa', $kabardesa->slug) }}"><img
-                                                        src="assets/images/listing-01.jpg" alt=""></a>
+                                                        src="{{ Storage::url('kabar-image/' . $kabardesa->image) }}" alt=""></a>
                                             </div>
                                             <div class="col-lg-7 right-content align-self-center">
                                                 <a href="{{ route('skabar-desa', $kabardesa->slug) }}">
