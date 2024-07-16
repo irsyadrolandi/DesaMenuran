@@ -80,7 +80,7 @@
                                                             style="cursor: pointer">hapus
                                                             gambar</span>
                                                         <img class="img_prevE img-fluid mb-3 img-fluid img-thumbnail border-dark col-sm-5 d-block"
-                                                            src="{{ asset('storage/' . $kabarDesa->image) }}">
+                                                            src="{{ Storage::url('kabar-image/' . $kabarDesa->image) }}" >
                                                     </div>
                                                 @else
                                                     <img class="img_prevE img-fluid mb-3 col-sm-5 d-block">

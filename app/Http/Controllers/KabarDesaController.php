@@ -51,23 +51,29 @@ class KabarDesaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        $rules = [
-            'title' => 'required|max:255',
-            'kategori' => 'required',
-            'image' => 'image|file|max:1024',
-            'slug' => 'required|unique:kabar_desas',
-            'body' => 'required'
-        ];
-        $validatedData = $request->validate($rules);
-        $validatedData['body'] = $request->body;
-        if ($request->file('image')) {
-            $validatedData['image'] = $request->file('image')->store('kabar-image');
-        }
-
-        kabarDesa::create($validatedData);
-        return Redirect::to('/dashboard/kabar-desa')->with('success', 'Kabar Desa berhasil di Upload');
+{
+    $rules = [
+        'title' => 'required|max:255',
+        'kategori' => 'required',
+        'image' => 'image|file|max:1024',
+        'slug' => 'required|unique:kabar_desas',
+        'body' => 'required'
+    ];
+    
+    $validatedData = $request->validate($rules);
+    $validatedData['body'] = $request->body;
+    
+    if ($request->file('image')) {
+        // $path = $request->file('image')->store('kabar-ima');
+        $path = $request->file('image')->store('kabar-image', 'public');
+        $validatedData['image'] = basename($path);  // Hanya simpan nama file
     }
+
+    kabarDesa::create($validatedData);
+    
+    return Redirect::to('/dashboard/kabar-desa')->with('success', 'Kabar Desa berhasil di Upload');
+}
+
 
     /**
      * Display the specified resource.
@@ -121,7 +127,7 @@ class KabarDesaController extends Controller
         $rules = [
             'title' => 'required|max:255',
             'kategori' => 'required',
-            'image' => 'image|file|max:1024',
+            'image' => 'image|file|max:10240',
         ];
         if ($request->slug !== $kabarDesa->slug) {
             $rules['slug'] = 'required|unique:kabar_desas';
@@ -133,7 +139,9 @@ class KabarDesaController extends Controller
             if ($request->old_image !== null) {
                 Storage::disk('public')->delete($request->old_image);
             }
-            $validatedData['image'] = $request->file('image')->store('kabar-image');
+            // $validatedData['image'] = $request->file('image')->store('kabar-image');
+            $path = $request->file('image')->store('kabar-image', 'public');
+            $validatedData['image'] = basename($path);  // Hanya simpan nama file
         }
 
         if ($request->hapus_gambar_input) {

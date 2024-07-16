@@ -81,7 +81,7 @@
                                         <div class="text-center">
                                             <a href="{{ route('kabar-desa.show', $kabarDesa->slug) }}">
                                                 <img class="img-fluid mt-3 mb-4" style="width: 50rem; height: 25rem"
-                                                    src="{{ $kabarDesa->image == '' ? 'https://source.unsplash.com/1200x600/?news' : asset('storage/' . $kabarDesa->image) }}"
+                                                    src="{{ Storage::url('kabar-image/' . $kabarDesa->image) }}" 
                                                     alt="{{ $kabarDesa->slug }}">
                                             </a>
                                         </div>

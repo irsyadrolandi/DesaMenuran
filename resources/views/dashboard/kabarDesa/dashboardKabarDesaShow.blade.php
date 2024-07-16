@@ -56,7 +56,7 @@
                                 <div class="card-body">
                                         <div class="text-center">
                                             <img class="img-fluid mt-3 mb-4" style="width: 70rem; max-height: 35rem"
-                                                src="{{ $kabarDesa->image == '' ? 'https://source.unsplash.com/1200x600/?news' : asset('storage/' . $kabarDesa->image) }}"
+                                                src="{{ Storage::url('kabar-image/' . $kabarDesa->image) }}" 
                                                 alt="...">
                                         </div>
                                         <div class="row  d-flex justify-content-center">
