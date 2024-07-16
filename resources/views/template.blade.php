@@ -12,7 +12,7 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 
-    <title>Website Desa Sungai Cina</title>
+    <title>Website Desa Menuran</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -55,7 +55,7 @@ https://templatemo.com/tm-564-plot-listing
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
                         <a href="{{ route('home') }}" class="logo">
-                            <h2 class="logo">Desa Sungai Cina</h2>
+                            <h2 class="logo">Desa Menuran</h2>
                         </a>
                         <a></a>
                         <!-- ***** Logo End ***** -->
@@ -65,11 +65,10 @@ https://templatemo.com/tm-564-plot-listing
                                     class="{{ Request::is('/*') ? 'active' : '' }}">Beranda</a></li>
                             <li><a href="{{ route('profil-desa') }}"
                                     class="{{ Request::is('profil-desa*') ? 'active' : '' }}">Profil Desa</a></li>
-                            <li><a href="{{ route('pelayanan') }}"
-                                    class="{{ Request::is('pelayanan*') ? 'active' : '' }}">Pelayanan</a></li>
+                            <li><a href="http://pengaduanmenuran.my.id" class="{{ Request::is('pelayanan*') ? 'active' : '' }}">Pengaduan</a></li>
                             <li><a href="{{ route('galeri-desa') }}" class="{{ Request::is('galeri-desa*') ? 'active' : '' }}">Galeri</a></li>
                             <li><a href="{{ route('kabar-desa') }}"
-                                    class="{{ Request::is('kabar-desa*') ? 'active' : '' }}">Kabar Desa</a></li>
+                                    class="{{ Request::is('kabar-desa*') ? 'active' : '' }}">Event Desa</a></li>
                             <li><a href="contact.html">Contact Us</a></li>
                             @auth
                             <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
@@ -96,11 +95,11 @@ https://templatemo.com/tm-564-plot-listing
                 <div class="col-lg-4">
                     <div class="about">
                         <div class="logo">
-                            <img src="/assets/images/black-logo.png" alt="Plot Listing">
+                            <img src="" alt="Plot ">
                         </div>
-                        <p>If you consider that <a rel="nofollow" href="https://templatemo.com/tm-564-plot-listing"
-                                target="_parent">Plot Listing template</a> is useful for your website, please <a
-                                rel="nofollow" href="https://www.paypal.me/templatemo" target="_blank">support us</a>
+                        <p>If <a rel="nofollow" href=""
+                                target="_parent">Plot </a> is  <a
+                                rel="nofollow" href="" target="_blank">s</a>
                             a little via PayPal.</p>
                     </div>
                 </div>
@@ -143,9 +142,8 @@ https://templatemo.com/tm-564-plot-listing
                 </div>
                 <div class="col-lg-12">
                     <div class="sub-footer">
-                        <p>Copyright © 2021 Plot Listing Co., Ltd. All Rights Reserved.
                             <br>
-                            Design: <a rel="nofollow" href="https://templatemo.com" title="CSS Templates">TemplateMo</a>
+                            Design: <a rel="nofollow" href="https://www.instagram.com/kkn.desamenuran/" title="CSS Templates">@ 2024 Desa Menuran</a>
                         </p>
                     </div>
                 </div>

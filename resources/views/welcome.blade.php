@@ -6,7 +6,7 @@
                 <div class="col-lg-12">
                     <div class="top-text header-text">
                         <h6>Selamat Datang</h6>
-                        <h2>Website Resmi Pemerintah Desa sungai cina kabupaten kepulauan Meranti</h2>
+                        <h2>Website Resmi Pemerintah Desa Menuran Kecamatan Baki Kabupaten Sukoharjo</h2>
                     </div>
                 </div>
                 <div class="col-lg-12">
@@ -33,12 +33,12 @@
                         <li><a href="{{ route('profil-desa') }}"><span class="icon"><img
                                         src="assets/images/search-icon-01.png" alt="Profil-desa"></span> Profil Desa</a>
                         </li>
-                        <li><a href="{{ route('pelayanan') }}"><span class="icon"><img
-                                        src="assets/images/search-icon-02.png" alt="Food"></span> Pelayanan</a></li>
-                        <li><a href="#"><span class="icon"><img src="assets/images/search-icon-04.png"
+                        <li><a href="http://pengaduanmenuran.my.id"><span class="icon"><img
+                                        src="assets/images/search-icon-02.png" alt="Food"></span> Pengaduan</a></li>
+                        <li><a href="{{ route('galeri-desa') }}"><span class="icon"><img src="assets/images/search-icon-04.png"
                                         alt="Shopping"></span> Galeri</a></li>
                         <li><a href="{{ route('kabar-desa') }}"><span class="icon"><img
-                                        src="assets/images/search-icon-05.png" alt="Travel"></span> Kabar Desa</a></li>
+                                        src="assets/images/search-icon-05.png" alt="Travel"></span> Event Desa</a></li>
                     </ul>
                 </div>
             </div>

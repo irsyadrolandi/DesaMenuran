@@ -28,7 +28,7 @@
                 <div class="col-lg-8">
                     <div class="top-text header-text">
                         <h2>Galeri<br>
-                            Desa Sungai Cina
+                            Desa Menuran
                         </h2>
                     </div>
                 </div>

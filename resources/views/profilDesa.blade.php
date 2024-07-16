@@ -6,7 +6,7 @@
                 <div class="col-lg-8">
                     <div class="top-text header-text">
                         <h2>Profil<br>
-                            Desa Sungai Cina
+                            Desa Menuran
                         </h2>
                     </div>
                 </div>
@@ -86,7 +86,7 @@
                                                                 <div class="row">
                                                                     <div class="col-lg-12">
                                                                         <h4>Gambaran Umum</h4>
-                                                                        <p>{!! $gambaranUmum->body !!}</p>
+                                                                        <p>ini adalah gambaran umum desa menuran</p>
                                                                     </div>
 
                                                                 </div>
@@ -105,7 +105,7 @@
                                                                 <div class="row">
                                                                     <div class="col-lg-12">
                                                                         <h4>Sejarah</h4>
-                                                                        <p>{!! $sejarah->body !!}</p>
+                                                                        <p>{$sejarah->body}</p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -124,7 +124,7 @@
                                                                 <div class="row">
                                                                     <div class="col-lg-12">
                                                                         <h4>Demografi</h4>
-                                                                        <p>{!! $demografi->body !!}</p>
+                                                                        <p>{$demografi->body}</p>
                                                                     </div>
 
                                                                 </div>
@@ -145,7 +145,7 @@
                                                                 <div class="row">
                                                                     <div class="col-lg-12 mt-5">
                                                                         <h4>Visi &amp; Misi</h4>
-                                                                        <p>{!! $visiMisi->body !!}</p>
+                                                                        <p>{$visiMisi->body}</p>
                                                                     </div>
 
                                                                 </div>
@@ -231,7 +231,7 @@
                                                                 <div class="row">
                                                                     <div class="col-lg-12 mt-5">
                                                                         <h4>Lembaga</h4>
-                                                                        <p>{!! $lembaga->body !!}</p>
+                                                                        <p>{$lembaga->body}</p>
                                                                     </div>
 
                                                                 </div>
