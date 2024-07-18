@@ -9,4 +9,8 @@ class profilDesa extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
+    protected $table = 'profil_desas';
+    protected $fillable = ['kategori','body'];
+
+
 }

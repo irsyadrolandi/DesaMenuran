@@ -55,7 +55,7 @@ class KabarDesaController extends Controller
         $rules = [
             'title' => 'required|max:255',
             'kategori' => 'required',
-            'image' => 'image|file|max:1024',
+            'image' => 'image|file|max:10240',
             'slug' => 'required|unique:kabar_desas',
             'body' => 'required'
         ];

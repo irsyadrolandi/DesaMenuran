@@ -23,8 +23,14 @@ use App\Models\perangkatDesa;
 |
 */
 
+Route::get('/dashboard/profil-desa/gambaran-umum', [ProfilDesaController::class, 'showGambaranUmum'])->name('profil-desa.gambaran-umum');
+Route::get('/dashboard/profil-desa/sejarah', [ProfilDesaController::class, 'showSejarah'])->name('profil-desa.sejarah');
+Route::get('/dashboard/profil-desa/demografi', [ProfilDesaController::class, 'showDemografi'])->name('profil-desa.demografi');
+Route::get('/dashboard/profil-desa/visi-misi', [ProfilDesaController::class, 'showVisiMisi'])->name('profil-desa.visi-misi');
+Route::get('/dashboard/profil-desa/perangkat-desa', [ProfilDesaController::class, 'showPerangkatDesa'])->name('profil-desa.perangkat-desa');
+Route::get('/dashboard/profil-desa/lembaga', [ProfilDesaController::class, 'showLembaga'])->name('profil-desa.lembaga');
 
-Route::resource('/dashboard/profil-desa', ProfilDesaController::class)->middleware('auth');
+// Route::get('/dashboard/profil-desa', [ProfilDesaController::class, 'show'])->middleware('auth');
 // Route::get('/dashboard/kabar-desa/{slug}', [KabarDesaController::class, 'showSingleKabarDesa'])->name('dashboard-single-kabar-desa');
 Route::get('/dashboard/kabar-desa/CreateSlug', [KabarDesaController::class, 'createSlug'])->middleware('auth');
 Route::resource('/dashboard/kabar-desa', KabarDesaController::class)->middleware('auth');
@@ -49,3 +55,6 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 
 Route::get('/register', [UserController::class, 'create'])->name('register');
 Route::post('/register', [UserController::class, 'store']);
+
+
+// Route::get('/dashboard/profil-desa/{profilDesa}', [ProfilDesaController::class, 'show'])->name('profil-desa');

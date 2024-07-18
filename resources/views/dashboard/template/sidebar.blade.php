@@ -30,23 +30,17 @@
             <i class="fas fa-university"></i>
             <span>Profil Desa</span>
         </a>
-        <div id="collapseTwo" class="collapse {{ Request::is('dashboard/profil-desa/*') ? 'show' : '' }}"
-            aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item {{ Request::is('dashboard/profil-desa/1*') ? 'active' : '' }}"
-                    href="{{ route('profil-desa.show', 1) }}">Gambaran Umum</a>
-                <a class="collapse-item {{ Request::is('dashboard/profil-desa/2*') ? 'active' : '' }}"
-                    href="{{ route('profil-desa.show', 2) }}">Sejarah</a>
-                <a class="collapse-item {{ Request::is('dashboard/profil-desa/3*') ? 'active' : '' }}"
-                    href="{{ route('profil-desa.show', 3) }}">Demografi</a>
-                <a class="collapse-item {{ Request::is('dashboard/profil-desa/4*') ? 'active' : '' }}"
-                    href="{{ route('profil-desa.show', 4) }}">Visi & Misi</a>
-                <a class="collapse-item {{ Request::is('dashboard/profil-desa/5*') ? 'active' : '' }}"
-                    href="{{ route('profil-desa.show', 5) }}">Perangkat Desa</a>
-                <a class="collapse-item {{ Request::is('dashboard/profil-desa/6*') ? 'active' : '' }}"
-                    href="{{ route('profil-desa.show', 6) }}">Lembaga</a>
+                <a class="collapse-item" href="#">Gambaran Umum</a>
+                <a class="collapse-item" href="#">Sejarah</a>
+                <a class="collapse-item" href="#">Demografi</a>
+                <a class="collapse-item" href="#">Visi & Misi</a>
+                <a class="collapse-item" href="{{ route('profil-desa.perangkat-desa') }}">Perangkat Desa</a>
+                <a class="collapse-item" href="#">Lembaga</a>
             </div>
         </div>
+
     </li>
 
     <!-- Nav Item - Utilities Collapse Menu -->

@@ -16,16 +16,52 @@ class ProfilDesaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    // public function index()
+    // {
+    //     return view('profilDesa', [
+    //         "gambaranUmum" => profilDesa::where('id', '=', '1')->first(),
+    //         "sejarah" =>  profilDesa::where('id', '=', '2')->first(),
+    //         "demografi" =>  profilDesa::where('id', '=', '3')->first(),
+    //         "visiMisi" =>  profilDesa::where('id', '=', '4')->first(),
+    //         "perangkatDesa" =>  perangkatDesa::where('id','=','5')->first(),
+    //         "lembaga" =>  profilDesa::where('id', '=', '6')->first(),
+    //     ]);
+    // }
+
+    public function showGambaranUmum()
     {
-        return view('profilDesa', [
-            "gambaranUmum" => profilDesa::where('id', '=', '1')->first(),
-            "sejarah" =>  profilDesa::where('id', '=', '2')->first(),
-            "demografi" =>  profilDesa::where('id', '=', '3')->first(),
-            "visiMisi" =>  profilDesa::where('id', '=', '4')->first(),
-            "images" =>  perangkatDesa::get(),
-            "lembaga" =>  profilDesa::where('id', '=', '6')->first(),
-        ]);
+        $gambaranUmum = profilDesa::where('id', 1)->first();
+        return view('dashboard.profilDesa.dashboardGambaranUmum', compact('gambaranUmum'));
+    }
+
+    public function showSejarah()
+    {
+        $sejarah = profilDesa::where('id', 2)->first();
+        return view('dashboard.profilDesa.dashboardSejarah', compact('sejarah'));
+    }
+
+    public function showDemografi()
+    {
+        $demografi = profilDesa::where('id', 3)->first();
+        return view('dashboard.profilDesa.dashboardDemografi', compact('demografi'));
+    }
+
+    public function showVisiMisi()
+    {
+        $visiMisi = profilDesa::where('id', 4)->first();
+        return view('dashboard.profilDesa.dashboardVisiMisi', compact('visiMisi'));
+    }
+    public function showPerangkatDesa()
+    {
+        $images = perangkatDesa::all();
+        $profilDesa = profilDesa::all();
+        return view('dashboard.profilDesa.dashboardPerangkatDesa', compact('images','profilDesa'));
+    }
+
+    public function showLembaga()
+    {
+        $lembaga = profilDesa::where('id', 6)->first();
+        return view('dashboard.profilDesa.dashboardLembaga', compact('lembaga'));
     }
 
     /**
@@ -55,22 +91,21 @@ class ProfilDesaController extends Controller
      * @param  \App\Models\profilDesa  $profilDesa
      * @return \Illuminate\Http\Response
      */
-    public function show(profilDesa $profilDesa)
-    {
-        if ($profilDesa->id == '5') {
-            $images = perangkatDesa::get();
-
-            return view('dashboard.profilDesa.dashboardPerangkatDesa',[
-                "profilDesa" => $profilDesa
-            ],
-            compact('images')
-        );
-        } else {
-            return view('dashboard.profilDesa.dashboardProfilDesa',[
-                "profilDesa" => $profilDesa
-        ]);
-        }
-    }
+    // public function show(profilDesa $profilDesa)
+    // {
+    //     if ($profilDesa->id == 5) {
+    //         $images = perangkatDesa::get();
+    //         return view('dashboard.profilDesa.dashboardPerangkatDesa', [
+    //             "profilDesa" => $profilDesa,
+    //             "images" => $images
+    //         ]);
+    //     } else {
+    //         return view('dashboard.profilDesa.dashboardProfilDesa', [
+    //             "profilDesa" => $profilDesa
+    //         ]);
+    //     }
+    // }
+    
 
     /**
      * Show the form for editing the specified resource.
@@ -80,9 +115,7 @@ class ProfilDesaController extends Controller
      */
     public function edit(profilDesa $profilDesa)
     {
-        return view('dashboard.profilDesa.dashboardProfilDesaEdit',[
-            "profilDesa" => $profilDesa
-        ]);
+        return view('dashboard.profilDesa.dashboardProfilDesaEdit',["profilDesa" => $profilDesa]);
     }
 
     /**

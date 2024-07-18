@@ -42,9 +42,8 @@
                             <div class="card-header py-3">
 
                                 <form action="{{ route('upload-perangkat') }}" class="form-image-upload rounded" method="POST"
-                                enctype="multipart/form-data">
-                                <h4>{{ $profilDesa->kategori }}</h4>
-                                    {!! csrf_field() !!}
+                                    enctype="multipart/form-data">
+                                    @csrf
                                     @if (count($errors) > 0)
                                         <div class="alert alert-danger">
                                             <strong>Whoops!</strong> There were some problems with your input.<br><br>
@@ -98,11 +97,13 @@
                                                 @foreach ($images as $image)
                                                     <div class="col-12 col-md-6 col-lg-4 mt-4">
                                                         <div class="card shadow-lg align-self-start">
-                                                            <div class="card-header bg-primary text-light d-flex justify-content-between">
+                                                            <div
+                                                                class="card-header bg-primary text-light d-flex justify-content-between">
                                                                 <div>
                                                                     <h5 class="text-break">{{ $image->jabatan }}</h5>
                                                                 </div>
-                                                                <form action="{{ route('destroy-perangkat', $image->id) }}"
+                                                                <form
+                                                                    action="{{ route('destroy-perangkat', $image->id) }}"
                                                                     method="POST">
 
                                                                     <input type="hidden" name="_method" value="delete">
@@ -115,19 +116,23 @@
                                                             </div>
                                                             <div>
                                                                 @if ($image->image == null)
-                                                                    <img src="{{ asset('assets/images/default.jpg') }}" style="height: 300px" alt="{{ $image->jabatan }}">
+                                                                    <img src="{{ asset('assets/images/default.jpg') }}"
+                                                                        style="height: 300px"
+                                                                        alt="{{ $image->jabatan }}">
                                                                 @else
-                                                                <img style="height: 300px" src="{{ asset('storage/'.$image->image)  }}"
-                                                                    data-target="#indicators"
-                                                                    data-slide-to="{{ $image->id }}"
-                                                                    alt="{{ $image->jabatan }}" />
+                                                                    <img style="height: 300px"
+                                                                        src="{{ asset('storage/'.$image->image) }}"
+                                                                        data-target="#indicators"
+                                                                        data-slide-to="{{ $image->id }}"
+                                                                        alt="{{ $image->jabatan }}" />
                                                                 @endif
                                                             </div>
-                                                            <div class="card-footer text-dark d-flex justify-content-center">
+                                                            <div
+                                                                class="card-footer text-dark d-flex justify-content-center">
                                                                 <h4 class="text-break">
                                                                     {{ $image->nama }}
                                                                 </h4>
-                                                              </div>
+                                                            </div>
 
                                                         </div>
 
@@ -152,21 +157,14 @@
     </div>
     <!-- End of Main Content -->
 
-
-
-    </div>
     <!-- End of Content Wrapper -->
 
-    </div>
     <!-- End of Page Wrapper -->
 
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
-
-
-
 
 </body>
 
