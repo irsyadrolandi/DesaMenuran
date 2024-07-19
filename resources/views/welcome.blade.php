@@ -30,7 +30,7 @@
                 </div>
                 <div class="col-lg-10 offset-lg-1">
                     <ul class="categories">
-                        <li><a href="{{ route('profil-desa') }}"><span class="icon"><img
+                        <li><a href="#"><span class="icon"><img
                                         src="assets/images/search-icon-01.png" alt="Profil-desa"></span> Profil Desa</a>
                         </li>
                         <li><a href="http://pengaduanmenuran.my.id"><span class="icon"><img
