@@ -25,21 +25,12 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-            aria-expanded="true" aria-controls="collapseTwo">
+        <a class="nav-link" href="{{ route('profil-desa.perangkat-desa') }}">
             <i class="fas fa-university"></i>
-            <span>Profil Desa</span>
+            <span>Perangkat Desa</span>
         </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="#">Gambaran Umum</a>
-                <a class="collapse-item" href="#">Sejarah</a>
-                <a class="collapse-item" href="#">Visi & Misi</a>
-                <a class="collapse-item" href="{{ route('profil-desa.perangkat-desa') }}">Perangkat Desa</a>
-            </div>
-        </div>
-
     </li>
+
 
     <!-- Nav Item - Utilities Collapse Menu -->
     <li class="nav-item">
