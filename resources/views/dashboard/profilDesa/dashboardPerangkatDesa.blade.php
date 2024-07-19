@@ -152,14 +152,14 @@
             </div>
 
         </div>
-        <!-- /.container-fluid -->
+        <!-- /.container-fluid skjhh k-->
 
     </div>
     <!-- End of Main Content -->
 
     <!-- End of Content Wrapper -->
 
-    <!-- End of Page Wrapper -->
+    <!--  -->
 
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
