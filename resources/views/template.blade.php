@@ -63,13 +63,12 @@ https://templatemo.com/tm-564-plot-listing
                         <ul class="nav">
                             <li><a href="{{ route('home') }}"
                                     class="{{ Request::is('/*') ? 'active' : '' }}">Beranda</a></li>
-                            <li><a href="{{ route('profil-desa') }}"
+                            <li><a href="#"
                                     class="{{ Request::is('profil-desa*') ? 'active' : '' }}">Profil Desa</a></li>
                             <li><a href="http://pengaduanmenuran.my.id" class="{{ Request::is('pelayanan*') ? 'active' : '' }}">Pengaduan</a></li>
                             <li><a href="{{ route('galeri-desa') }}" class="{{ Request::is('galeri-desa*') ? 'active' : '' }}">Galeri</a></li>
                             <li><a href="{{ route('kabar-desa') }}"
                                     class="{{ Request::is('kabar-desa*') ? 'active' : '' }}">Event Desa</a></li>
-                            <li><a href="contact.html">Contact Us</a></li>
                             @auth
                             <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
                             @else

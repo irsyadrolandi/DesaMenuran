@@ -40,28 +40,17 @@ class ProfilDesaController extends Controller
         return view('dashboard.profilDesa.dashboardSejarah', compact('sejarah'));
     }
 
-    public function showDemografi()
-    {
-        $demografi = profilDesa::where('id', 3)->first();
-        return view('dashboard.profilDesa.dashboardDemografi', compact('demografi'));
-    }
-
     public function showVisiMisi()
     {
         $visiMisi = profilDesa::where('id', 4)->first();
         return view('dashboard.profilDesa.dashboardVisiMisi', compact('visiMisi'));
     }
+
     public function showPerangkatDesa()
     {
         $images = perangkatDesa::all();
         $profilDesa = profilDesa::all();
         return view('dashboard.profilDesa.dashboardPerangkatDesa', compact('images','profilDesa'));
-    }
-
-    public function showLembaga()
-    {
-        $lembaga = profilDesa::where('id', 6)->first();
-        return view('dashboard.profilDesa.dashboardLembaga', compact('lembaga'));
     }
 
     /**
