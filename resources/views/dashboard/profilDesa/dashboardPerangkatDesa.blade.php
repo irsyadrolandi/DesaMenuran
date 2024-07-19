@@ -71,7 +71,7 @@
                                         <div class="col-md-3">
                                             <strong>Jabatan:</strong>
                                             <input type="text" name="jabatan" class="form-control"
-                                                placeholder="Nama" required>
+                                                placeholder="Jabatan" required>
                                         </div>
                                         <div class="col-md-5">
                                             <strong>Image:</strong>
@@ -121,7 +121,7 @@
                                                                         alt="{{ $image->jabatan }}">
                                                                 @else
                                                                     <img style="height: 300px"
-                                                                        src="{{ asset('storage/'.$image->image) }}"
+                                                                        src="{{ Storage::url('perangkat-image/' . $image->image) }}"
                                                                         data-target="#indicators"
                                                                         data-slide-to="{{ $image->id }}"
                                                                         alt="{{ $image->jabatan }}" />
