@@ -18,7 +18,9 @@ class PerangkatDesaController extends Controller
      */
     public function index()
     {
-        //
+        return view('profilDesa' ,[
+            "perangkatDesas" => perangkatDesa::all()
+        ]);
     }
 
     /**

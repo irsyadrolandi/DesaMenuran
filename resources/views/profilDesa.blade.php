@@ -1,248 +1,160 @@
 @extends('template')
+
 @section('contents')
-    <div class="page-heading">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="top-text header-text">
-                        <h2>Profil<br>
-                            Desa Menuran
-                        </h2>
-                    </div>
+<div class="page-heading">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="top-text header-text">
+                    <h2>Profil<br>Desa Menuran</h2>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-
-
-    <div class="category-post">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="naccs">
-                        <div class="grid">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="menu row">
-                                        <div class="first-thumb active col-lg-2">
-                                            <div class="thumb">
-                                                <span class="icon"><img src="assets/images/icon-gambaran-umum.png"
-                                                        alt="">
-                                                    <h4>Gambaran Umum</h4>
-                                                </span>
-                                            </div>
+<div class="category-post">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="naccs">
+                    <div class="grid">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="menu row">
+                                    <div class="first-thumb active col-lg-2">
+                                        <div class="thumb">
+                                            <span class="icon"><img src="assets/images/icon-gambaran-umum.png" alt="">
+                                                <h4>Gambaran Umum</h4>
+                                            </span>
                                         </div>
-                                        <div class=" col-lg-2">
-                                            <div class="thumb">
-                                                <span class="icon"><img src="assets/images/icon-sejarah.png"
-                                                        alt="">
-                                                    <h4>Sejarah</h4>
-                                                </span>
-                                            </div>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <div class="thumb">
+                                            <span class="icon"><img src="assets/images/icon-sejarah.png" alt="">
+                                                <h4>Sejarah</h4>
+                                            </span>
                                         </div>
-                                        <div class=" col-lg-2">
-                                            <div class="thumb">
-                                                <span class="icon"><img src="assets/images/icon-demografi.png"
-                                                        alt="">
-                                                    <h4>Demografi</h4>
-                                                </span>
-                                            </div>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <div class="thumb">
+                                            <span class="icon"><img src="assets/images/icon-visi-misi.png" alt="">
+                                                <h4>Visi &amp; Misi</h4>
+                                            </span>
                                         </div>
-                                        <div class=" col-lg-2">
-                                            <div class="thumb">
-                                                <span class="icon"><img src="assets/images/icon-visi-misi.png"
-                                                        alt="">
-                                                    <h4>Visi &amp; Misi</h4>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class=" col-lg-2">
-                                            <div class="thumb">
-                                                <span class="icon"><img src="assets/images/icon-perangkat-desa.png"
-                                                        alt="">
-                                                    <h4>Perangkat Desa</h4>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="last-thumb  col-lg-2">
-                                            <div class="thumb">
-                                                <span class="icon"><img src="assets/images/icon-lembaga.png"
-                                                        alt="">
-                                                    <h4>Lembaga</h4>
-                                                </span>
-                                            </div>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <div class="thumb">
+                                            <span class="icon"><img src="assets/images/icon-perangkat-desa.png" alt="">
+                                                <h4>Perangkat Desa</h4>
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-12">
-                                    <ul class="nacc">
-                                        <li class="active">
-                                            <div>
-                                                <div class="thumb">
-                                                    <div class="row">
-                                                        <div class="col-lg-12 mt-5">
-                                                            <div class="description">
-                                                                <div class="row">
-                                                                    <div class="col-lg-12">
-                                                                        <h4>Gambaran Umum</h4>
-                                                                        <p>ini adalah gambaran umum desa menuran</p>
-                                                                    </div>
-
+                            </div>
+                            <div class="col-lg-12">
+                                <ul class="nacc">
+                                    <li class="active">
+                                        <div>
+                                            <div class="thumb">
+                                                <div class="row">
+                                                    <div class="col-lg-12 mt-5">
+                                                        <div class="description">
+                                                            <div class="row">
+                                                                <div class="col-lg-12">
+                                                                    <h4>Gambaran Umum</h4>
+                                                                    <p>Ini adalah gambaran umum desa menuran.</p>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <div class="thumb">
-                                                    <div class="row">
-                                                        <div class="col-lg-12 mt-5">
-                                                            <div class="description">
-                                                                <div class="row">
-                                                                    <div class="col-lg-12">
-                                                                        <h4>Sejarah</h4>
-                                                                        <p>{$sejarah->body}</p>
-                                                                    </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <div class="thumb">
+                                                <div class="row">
+                                                    <div class="col-lg-12 mt-5">
+                                                        <div class="description">
+                                                            <div class="row">
+                                                                <div class="col-lg-12">
+                                                                    <h4>Sejarah</h4>
+                                                                    <p>Menuran adalah salah satu desa di kecamatan Baki, kabupaten Sukoharjo yang sudah mengalami pergantian kepala desa sebanyak enam kali yang memipin pertama kali adalah Bp. Demang Citro Widoyo, kata Menuran berasal dar kata Menur yang berarti bunga melur; melati susun jadi para tokoh – tokoh di desa menuran berharap dengan kata Menuran desa menjadi desa tersusun, kompak dan rukun. Setelah dipimpin Bp. Demang Citro Widoyo kemudian dilanjutkan dengan kemipinan Bp. Taruno Widoyo, di bawah kemimpinan beliau desa belum ada kemajuan yang merata terutama dibidang pembangunan, Setelah Bp. Taruno Widoyo kemudian digantikan oleh Bp. Soedjimo dibawah kemimpinan beliau desa menuran juga masih belum bisa bersaing dengan desa yang lainya, pada tahun 1980 kepala desa mengalami pergantian lagi yang dipimpin oleh Bp. Margono, beliau selesai menjabat pada tahun 1997 di masa itu desa menuran masih belum mengalami kemajuan secara signifikan, pada 25 September 1998 diadakan pemilu untuk memilih kepala desa yang secara langsung oleh masyrakat, pada pemilu yang memenangkannya adalah Bp. Sri Pomo, SH dibawah kepemimpinan beliau masyarakat merasa yaman dan tentram dibwah kemimpinan beliau, masa jabatan beliau 21 Desember 2012, beliau menjabat selama dua periode, di akhir tahun 2012 di desa menuran ada hajatan besar yaitu pemilihan kepala desa yang yang ke enam, dari hasil pemungutan suara dimenangkan oleh Bp. Galuh Nurwanto yang sekarang masih mejabat, dibawah kemimpinan Bp. Nurwanto masyarakat merasa senang karena selalu diperhatikan karena Bp. Nurwanto sering aktif di kegiatan desa, dan beliau tidak sungkan membantu warganya yang mengalami kesusahan.</p>
                                                                 </div>
                                                             </div>
                                                         </div>
-
                                                     </div>
                                                 </div>
                                             </div>
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <div class="thumb">
-                                                    <div class="row">
-                                                        <div class="col-lg-12 mt-5">
-                                                            <div class="description">
-                                                                <div class="row">
-                                                                    <div class="col-lg-12">
-                                                                        <h4>Demografi</h4>
-                                                                        <p>{$demografi->body}</p>
-                                                                    </div>
-
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <div class="thumb">
+                                                <div class="row">
+                                                    <div class="col-lg-12 mt-5">
+                                                        <div class="description">
+                                                            <div class="row">
+                                                                <div class="col-lg-12">
+                                                                    <h4>Visi &amp; Misi</h4>
+                                                                    <p>Menuju desa menuran yang makmur modern dan berbudaya</p>
                                                                 </div>
                                                             </div>
                                                         </div>
-
                                                     </div>
                                                 </div>
                                             </div>
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <div class="thumb">
-                                                    <div class="row">
-
-                                                        <div class="col-lg-12">
-                                                            <div class="description">
-                                                                <div class="row">
-                                                                    <div class="col-lg-12 mt-5">
-                                                                        <h4>Visi &amp; Misi</h4>
-                                                                        <p>{$visiMisi->body}</p>
-                                                                    </div>
-
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <div class="thumb">
-                                                    <div class="row">
-
-                                                        <div class="col-lg-12">
-                                                            <div class="description">
-                                                                <div class="row">
-                                                                    <div class="col-lg-12 mt-5">
-                                                                        <h4>Perangkat Desa</h4>
-                                                                        @if ($images->count())
-                                                                            <div
-                                                                                class="row d-flex flex-wrap align-items-start">
-                                                                                <div class="row">
-                                                                                    <div class="container">
-                                                                                        @if ($images->count())
-                                                                                            <div class="row d-flex flex-wrap align-items-start">
-                                                                                                @foreach ($images as $image)
-                                                                                                    <div class="col-12 col-md-6 col-lg-3 mt-4">
-                                                                                                        <div class="card shadow-lg align-self-start">
-                                                                                                            <div class="card-header bg-primary text-light d-flex justify-content-center">
-                                                                                                                <div>
-                                                                                                                    <h5 class="text-break">{{ $image->jabatan }}</h5>
-                                                                                                                </div>
-                                                                                                            </div>
-                                                                                                            <div>
-                                                                                                                @if ($image->image == null)
-                                                                                                                    <img src="{{ asset('assets/images/default.jpg') }}" style="height: 300px" alt="{{ $image->jabatan }}">
-                                                                                                                @else
-                                                                                                                <img style="height: 300px" src="{{ asset('storage/'.$image->image)  }}"
-                                                                                                                    data-target="#indicators"
-                                                                                                                    data-slide-to="{{ $image->id }}"
-                                                                                                                    alt="{{ $image->jabatan }}" />
-                                                                                                                @endif
-                                                                                                            </div>
-                                                                                                            <div class="card-footer text-dark d-flex justify-content-center">
-                                                                                                                <h4 class="text-break">
-                                                                                                                    {{ $image->nama }}
-                                                                                                                </h4>
-                                                                                                              </div>
-
-                                                                                                        </div>
-
-                                                                                                    </div>
-                                                                                                @endforeach
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <div class="thumb">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="description">
+                                                            <div class="row">
+                                                                <div class="col-lg-12 mt-5">
+                                                                    <h4>Perangkat Desa</h4>
+                                                                    @if ($perangkatDesas->count())
+                                                                        <div class="row d-flex flex-wrap align-items-start">
+                                                                            @foreach ($perangkatDesas as $perangkatDesa)
+                                                                                <div class="col-12 col-md-6 col-lg-3 mt-4">
+                                                                                    <div class="card shadow-lg align-self-start">
+                                                                                        <div class="card-header bg-primary text-light d-flex justify-content-center">
+                                                                                            <div>
+                                                                                                <h5 class="text-break">{{ $perangkatDesa->jabatan }}</h5>
                                                                                             </div>
-                                                                                        @endif
+                                                                                        </div>
+                                                                                        <div>
+                                                                                            @if ($perangkatDesa->image == null)
+                                                                                                <img src="{{ Storage::url('perangkat-image/' . $perangkatDesa->image) }}" style="height: 300px" alt="{{ $perangkatDesa->jabatan }}">
+                                                                                            @else
+                                                                                                <img style="height: 300px" src="{{ Storage::url('perangkat-image/' . $perangkatDesa->image) }}" data-target="#indicators" data-slide-to="{{ $perangkatDesa->id }}" alt="{{ $perangkatDesa->jabatan }}">
+                                                                                            @endif
+                                                                                        </div>
+                                                                                        <div class="card-footer text-dark d-flex justify-content-center">
+                                                                                            <h4 class="text-break">{{ $perangkatDesa->nama }}</h4>
+                                                                                        </div>
                                                                                     </div>
-
-                                                                                </div> <!-- list-group / end -->
-                                                                            </div>
-                                                                        @else
-                                                                            <div class="d-flex justify-content-center">
-                                                                                <h2>GALERI KOSONG</h2>
-                                                                            </div>
-                                                                        @endif
-                                                                    </div>
-
+                                                                                </div>
+                                                                            @endforeach
+                                                                        </div>
+                                                                    @else
+                                                                        <div class="d-flex justify-content-center">
+                                                                            <h2>GALERI KOSONG</h2>
+                                                                        </div>
+                                                                    @endif
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <div class="thumb">
-                                                    <div class="row">
-
-                                                        <div class="col-lg-12">
-                                                            <div class="description">
-                                                                <div class="row">
-                                                                    <div class="col-lg-12 mt-5">
-                                                                        <h4>Lembaga</h4>
-                                                                        <p>{$lembaga->body}</p>
-                                                                    </div>
-
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
+                                        </div>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>

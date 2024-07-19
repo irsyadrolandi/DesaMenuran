@@ -42,7 +42,7 @@ Route::delete('image-gallery/{id}', [ImageGalleryController::class, 'destroy'])-
 Route::get('/dashboard/galeri', [ImageGalleryController::class, 'index'])->middleware('auth', 'verified')->name('dashboard-galeri');
 Route::get('/kabar-desa/{slug}', [home::class, 'show'])->name('skabar-desa');
 Route::get('/', [home::class, 'index'])->name('home');
-Route::get('/profil-desa', [ProfilDesaController::class, 'index'])->name('profil-desa');
+Route::get('/profil-desa', [PerangkatDesaController::class, 'index'])->name('profil-desa');
 Route::get('/pelayanan', [pelayananController::class, 'index'])->name('pelayanan');
 Route::get('/kabar-desa', [home::class, 'kabardesa'])->name('kabar-desa');
 Route::get('/galeri-desa', [ImageGalleryController::class, 'p_index'])->name('galeri-desa');
