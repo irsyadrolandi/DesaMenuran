@@ -39,20 +39,22 @@ class PerangkatDesaController extends Controller
      */
     public function upload(Request $request)
     {
-        $this->validate($request, [
+        $perangkatDesa = [
             'nama' => 'required',
             'jabatan' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
-        if ($request->image != null) {
-            $input['image'] = $request->file('image')->store('perangkat-image');
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:10240'
+        ];
+        
+        $validatedData = $request->validate($perangkatDesa);
+        
+        if ($request->file('image')) {
+            $path = $request->file('image')->store('perangkat-image', 'public');
+            $validatedData['image'] = basename($path);  // Hanya simpan nama file
         }
 
-        $input['nama'] = $request->nama;
-        $input['jabatan'] = $request->jabatan;
-// dd($input);
-        perangkatDesa::create($input);
-        return back()->with('success', 'Perangkat Desa Berhasil Di upload');
+        perangkatDesa::create($validatedData);
+
+        return back()->with('success', 'Perangkat Desa Berhasil Ditambahkan');
     }
 
     /**

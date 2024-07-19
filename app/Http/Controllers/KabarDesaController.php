@@ -64,7 +64,6 @@ class KabarDesaController extends Controller
         $validatedData['body'] = $request->body;
         
         if ($request->file('image')) {
-            // $path = $request->file('image')->store('kabar-ima');
             $path = $request->file('image')->store('kabar-image', 'public');
             $validatedData['image'] = basename($path);  // Hanya simpan nama file
         }
