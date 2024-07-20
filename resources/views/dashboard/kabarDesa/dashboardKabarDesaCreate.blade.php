@@ -64,16 +64,12 @@
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label" for="kategori">Kategori</label><br>
-                                            <select class="form-select" id="kategori" name="kategori">
-                                                <option value= "1">
-                                                    {{ 'Kabar Desa' }}</option>
-                                                <option value= "2">
-                                                    {{ 'Pengumuman' }}</option>
-
+                                            <select class="form-select custom-select" id="kategori" name="kategori">
+                                                <option value="1">{{ 'Kabar Desa' }}</option>
+                                                <option value="2">{{ 'Pengumuman' }}</option>
                                             </select>
                                         </div>
-
-
+                                        
                                         <div class="mb-3">
                                             <label for="gambar" class="form-label fw-bold">Gambar</label>
 
@@ -173,6 +169,8 @@
 
     <!-- Custom scripts for all pages-->
     <script src="{{ asset('dashboard-template/js/sb-admin-2.min.js') }}"></script>
+
+    {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
 
 </body>
 

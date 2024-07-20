@@ -19,7 +19,8 @@ class PerangkatDesaController extends Controller
     public function index()
     {
         return view('profilDesa' ,[
-            "perangkatDesas" => perangkatDesa::all()
+            "perangkatDesas" => perangkatDesa::all(),
+            "paginateDesas" => perangkatDesa::latest()->paginate(4)
         ]);
     }
 

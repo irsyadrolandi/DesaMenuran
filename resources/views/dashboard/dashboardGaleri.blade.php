@@ -120,6 +120,7 @@
                                                             <div data-toggle="modal" data-target="#lightbox">
                                                                 <img class="gambar" src="{{ asset('galeri/' . $image->image) }}"
                                                                     data-target="#indicators"
+                                                                    height="250px"
                                                                     data-slide-to="{{ $image->id }}"
                                                                     alt="a" />
                                                             </div>
@@ -159,7 +160,7 @@
                                                                 <div class="carousel-item" id="{{ $image->id }}"
                                                                     data-nama="{{ $image->title }}">
                                                                     <img class="d-block w-100"
-                                                                        src="/images/{{ $image->image }}"
+                                                                        src="{{ asset('galeri/' . $image->image) }}"
                                                                         alt="{{ $image->id }}">
                                                                 </div>
                                                             @endforeach

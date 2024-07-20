@@ -54,14 +54,13 @@
                                             </div>
                                             <div class="mb-3">
                                                 <label class="form-label" for="kategori">Kategori</label><br>
-                                                <select class="form-select" id="kategori" name="kategori">
+                                                <select class="form-select custom-select" id="kategori" name="kategori" aria-label="Default select example">
                                                     <option value= "1"
                                                         {{ $kabarDesa->kategori === '1' ? 'selected' : '' }}>
                                                         {{ 'Kabar Desa' }}</option>
                                                     <option value= "2"
                                                         {{ $kabarDesa->kategori === '2' ? 'selected' : '' }}>
                                                         {{ 'Pengumuman' }}</option>
-
                                                 </select>
                                             </div>
 
