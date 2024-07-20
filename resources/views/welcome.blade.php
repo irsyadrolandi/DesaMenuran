@@ -10,7 +10,7 @@
                     </div>
                 </div>
                 <div class="col-lg-12">
-                    <form id="search-form" action="/">
+                    <form id="search-form" action="{{ route('kabar-desa') }}" method="GET">
                         <div class="row">
                             <div class="col-lg-9 align-self-center">
                                 <fieldset>
@@ -30,22 +30,15 @@
                 </div>
                 <div class="col-lg-10 offset-lg-1">
                     <ul class="categories">
-                        <li><a href="#"><span class="icon"><img
-                                        src="assets/images/search-icon-01.png" alt="Profil-desa"></span> Profil Desa</a>
-                        </li>
-                        <li><a href="http://pengaduanmenuran.my.id"><span class="icon"><img
-                                        src="assets/images/search-icon-02.png" alt="Food"></span> Pengaduan</a></li>
-                        <li><a href="{{ route('galeri-desa') }}"><span class="icon"><img src="assets/images/search-icon-04.png"
-                                        alt="Shopping"></span> Galeri</a></li>
-                        <li><a href="{{ route('kabar-desa') }}"><span class="icon"><img
-                                        src="assets/images/search-icon-05.png" alt="Travel"></span> Event Desa</a></li>
+                        <li><a href="#"><span class="icon"><img src="assets/images/search-icon-01.png" alt="Profil-desa"></span> Profil Desa</a></li>
+                        <li><a href="http://pengaduanmenuran.my.id"><span class="icon"><img src="assets/images/search-icon-02.png" alt="Food"></span> Pengaduan</a></li>
+                        <li><a href="{{ route('galeri-desa') }}"><span class="icon"><img src="assets/images/search-icon-04.png" alt="Shopping"></span> Galeri</a></li>
+                        <li><a href="{{ route('kabar-desa') }}"><span class="icon"><img src="assets/images/search-icon-05.png" alt="Travel"></span> Event Desa</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
-
-
 
     <div class="recent-listing">
         <div class="container">
@@ -77,7 +70,6 @@
                                 @endforeach
                             </div>
                             <div class="d-flex justify-content-center">
-
                                 {{ $kabardesas->links() }}
                             </div>
                         </div>

@@ -17,6 +17,20 @@ class DashboardController extends Controller
         ]);
     }
 
+        public function search(Request $request)
+        {
+            $search = $request->input('search');
+            if ($search) {
+                $kabarDesas = kabarDesa::where('title', 'LIKE', "%{$search}%")
+                                        ->orWhere('body', 'LIKE', "%{$search}%")
+                                        ->paginate(10);
+            } else {
+                $kabarDesas = kabarDesa::paginate(10);
+            }
+
+            return view('dashboard.searchResult', compact('kabarDesas'));
+        }
+
 
     public function show(profilDesa $id)
     {

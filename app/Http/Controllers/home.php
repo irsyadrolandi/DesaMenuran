@@ -12,14 +12,18 @@ class home extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $search = $request->input('search');
+        if ($search) {
+            $kabardesas = kabarDesa::where('title', 'LIKE', "%{$search}%")
+                                    ->orWhere('body', 'LIKE', "%{$search}%")
+                                    ->paginate(3);
+        } else {
+            $kabardesas = kabarDesa::paginate(3);
+        }
 
-        return view('welcome',[
-            "kabardesas" => kabarDesa::latest()->filter(request(['search']))->paginate(3)
-        ]);
-
-
+        return view('welcome', compact('kabardesas'));
     }
 
     public function kabardesa()
