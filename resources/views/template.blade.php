@@ -12,7 +12,7 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 
-    <title>Website Desa Menuran</title>
+    <title>Desa Menuran</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -93,48 +93,22 @@ https://templatemo.com/tm-564-plot-listing
             <div class="row">
                 <div class="col-lg-4">
                     <div class="about">
-                        <div class="logo">
-                            <img src="" alt="Plot ">
-                        </div>
-                        <p>If <a rel="nofollow" href=""
-                                target="_parent">Plot </a> is  <a
-                                rel="nofollow" href="" target="_blank">s</a>
-                            a little via PayPal.</p>
+                        <p><a rel="nofollow" href=""
+                                target="_parent"></a><a
+                                rel="nofollow" href="" target="_blank"></a>
+                                Jl. Citro Widoyo No.01, Dusun 2, Menuran, Kec. Baki, Kabupaten Sukoharjo, Jawa Tengah 57556</p>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="helpful-links">
-                        <h4>Helpful Links</h4>
+                        <h4>Jadwal Pelayanan</h4>
                         <div class="row">
                             <div class="col-lg-6 col-sm-6">
                                 <ul>
-                                    <li><a href="#">Categories</a></li>
-                                    <li><a href="#">Reviews</a></li>
-                                    <li><a href="#">Listing</a></li>
-                                    <li><a href="#">Contact Us</a></li>
+                                    <li><a href="#">Senin s/d Kamis : 07.30 - 15.00 WIB</a></li>
+                                    <li><a href="#">Jum'at : 07.30 - 11.00 WIB </a></li>
+                                    <li><a href="#">Sabtu : Libur</a></li>
                                 </ul>
-                            </div>
-                            <div class="col-lg-6">
-                                <ul>
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="#">Awards</a></li>
-                                    <li><a href="#">Useful Sites</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="contact-us">
-                        <h4>Contact Us</h4>
-                        <p>27th Street of New Town, Digital Villa</p>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <a href="#">010-020-0340</a>
-                            </div>
-                            <div class="col-lg-6">
-                                <a href="#">090-080-0760</a>
                             </div>
                         </div>
                     </div>

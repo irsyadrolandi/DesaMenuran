@@ -4562,7 +4562,7 @@ input[type="button"].btn-block {
 
 .card-footer {
   padding: 0.75rem 1.25rem;
-  background-color: #f8f9fc;
+  background-color: #01796f;
   border-top: 1px solid #01796f;
 }
 
@@ -10813,7 +10813,7 @@ a:focus {
   font-weight: 900;
   content: '\f107';
   font-family: 'Font Awesome 5 Free';
-  color: #d1d3e2;
+  color: #01796f;
 }
 
 .card .card-header[data-toggle="collapse"].collapsed {
