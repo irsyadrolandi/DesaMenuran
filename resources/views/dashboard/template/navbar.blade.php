@@ -1,5 +1,43 @@
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+<style>
+    .btn-search {
+        background-color: #01796f;
+        border-color: #01796f;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 0 5px 5px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s, border-color 0.3s;
+    }
 
+    .btn-search i {
+        color: white;
+    }
+
+    .btn-search:hover {
+        background-color: #016a60;
+        border-color: #016a60;
+    }
+
+    .btn-logout {
+        background-color: #01796f;
+        border-color: #01796f;
+        color: white;
+        padding: 7px 15px;
+        border-radius: 5px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .btn-logout:hover {
+        background-color: #016a60;
+    }
+</style>
     <!-- Sidebar Toggle (Topbar) -->
     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
         <i class="fa fa-bars"></i>
@@ -10,7 +48,7 @@
         <div class="input-group">
             <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." name="search" aria-label="Search" aria-describedby="basic-addon2" value="{{ request('search') }}">
             <div class="input-group-append">
-                <button class="btn btn-primary" type="submit">
+                <button class="btn-search" type="submit">
                     <i class="fas fa-search fa-sm"></i>
                 </button>
             </div>
@@ -78,7 +116,7 @@
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
-                        <button type="submit" class="btn btn-primary">Logout</button>
+                        <button type="submit" class="btn-logout">Logout</button>
                     </form>
                 </div>
             </div>

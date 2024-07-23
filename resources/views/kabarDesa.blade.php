@@ -1,5 +1,34 @@
 @extends('template')
 @section('contents')
+<style>
+    .btn-custom {
+        background-color: #01796f;
+        border-color: #01796f;
+        color: white;
+        padding: 10px 20px;
+        font-size: 1.25rem; /* sesuai dengan btn-lg */
+        border-radius: .3rem; /* sesuai dengan bentuk asli */
+        display: block;
+        width: 100%;
+        margin-bottom: 1rem;
+        text-align: center;
+        text-decoration: none;
+        transition: background-color 0.3s, border-color 0.3s;
+    }
+
+    .btn-custom:hover {
+        background-color: #016a60;
+        border-color: #016a60;
+        text-decoration: none; /* Menghilangkan underline saat hover */
+    }
+
+    .btn-custom:focus, .btn-custom:active {
+        background-color: #015f57;
+        border-color: #015f57;
+        outline: none;
+        box-shadow: none;
+    }
+</style>
     {{-- {{ dd($kabarDesas) }} --}}
     <div class="page-heading">
         <div class="container">
@@ -30,8 +59,8 @@
                 <div class="col-lg-12">
                     <div class="row">
                         <div class="col-lg-3">
-                            <a href="/kabar-desa/?kategori=1" class="btn btn-primary w-100 btn-lg mb-3">Kabar Desa</a>
-                            <a href="/kabar-desa/?kategori=2" class="btn btn-primary w-100 btn-lg mb-3">Pengumuman</a>
+                            <a href="/kabar-desa/?kategori=1" class="btn btn-custom">Kabar Desa</a>
+                            <a href="/kabar-desa/?kategori=2" class="btn btn-custom">Pengumuman</a>
                         </div>
                         <div class="col-lg-9">
                             <div class="recent-listing">

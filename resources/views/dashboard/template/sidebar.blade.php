@@ -1,4 +1,9 @@
-<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+<style>
+    .color-bg {
+        background-color: #01796f;
+    }
+</style>
+<ul class="navbar-nav color-bg sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('home') }}">
@@ -9,7 +14,7 @@
     <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item">
+    <li class="nav-item {{ Request::routeIs('dashboard') ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('dashboard') }}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
@@ -24,7 +29,7 @@
     </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
+    <li class="nav-item {{ Request::routeIs('profil-desa.perangkat-desa') ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('profil-desa.perangkat-desa') }}">
             <i class="fas fa-university"></i>
             <span>Perangkat Desa</span>
@@ -36,15 +41,15 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
             aria-expanded="true" aria-controls="collapseUtilities">
-            </i><i class="fas fa-newspaper"></i>
+            <i class="fas fa-newspaper"></i>
             <span>Kabar Desa</span>
         </a>
         <div id="collapseUtilities" class="collapse {{ Request::is('dashboard/kabar-*') ? 'show' : '' }}"
             aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item {{ Request::fullUrlIs(url('/dashboard/kabar-desa')) ? 'active' : '' }}" href="{{ route('kabar-desa.index') }}">Semua Kabar Desa</a>
-                <a class="collapse-item {{ Request::fullUrlIs(url('/dashboard/kabar-desa?kategori=1')) ? 'active' : '' }}" href="{{ url('/dashboard/kabar-desa?kategori=1') }}">Kabar Desa</a>
-                <a class="collapse-item {{ Request::fullUrlIs(url('/dashboard/kabar-desa?kategori=2')) ? 'active' : '' }}" href="{{ url('/dashboard/kabar-desa?kategori=2') }}">Pengumuman</a>
+                <a class="collapse-item {{ Request::is('dashboard/kabar-desa') && !request('kategori') ? 'active' : '' }}" href="{{ route('kabar-desa.index') }}">Semua Kabar Desa</a>
+                <a class="collapse-item {{ Request::is('dashboard/kabar-desa') && request('kategori') == 1 ? 'active' : '' }}" href="{{ url('/dashboard/kabar-desa?kategori=1') }}">Kabar Desa</a>
+                <a class="collapse-item {{ Request::is('dashboard/kabar-desa') && request('kategori') == 2 ? 'active' : '' }}" href="{{ url('/dashboard/kabar-desa?kategori=2') }}">Pengumuman</a>
             </div>
         </div>
     </li>

@@ -1,5 +1,20 @@
 @include('dashboard.template.head')
+<style>
+    .btn-submit {
+        background-color: #01796f;
+        border-color: #01796f;
+        color: white;
+        padding: 7px 15px;
+        border-radius: 5px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
 
+    .btn-submit:hover {
+        background-color: #016a60;
+    }
+</style>
 <body id="page-top">
 
     <!-- Page Wrapper -->
@@ -30,7 +45,7 @@
                             <div class="card shadow mb-4">
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Kabar Desa</h6>
+                                    <h6 class="m-0 font-weight-bold text-light">Kabar Desa</h6>
 
                                 </div>
                                 <div class="card-body">
@@ -91,7 +106,7 @@
                                             <trix-editor input="body">
                                             </trix-editor>
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Simpan</button>
+                                        <button type="submit" class="btn-submit">Simpan</button>
                                     </form>
 
 

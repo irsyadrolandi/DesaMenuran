@@ -8,6 +8,23 @@
     .col-12 img {
         width: 100%;
     }
+    .btn-submit {
+        background-color: #01796f;
+        border-color: #01796f;
+        color: white;
+        padding: 7px 15px;
+        border-radius: 5px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .btn-submit:hover {
+        background-color: #016a60;
+    }
+    .color-bg {
+        background-color: #01796f;
+    }
 </style>
 
 <body id="page-top">
@@ -80,7 +97,7 @@
                                         </div>
                                         <div class="col-md-1">
                                             <br />
-                                            <button type="submit" class="btn btn-success">Upload</button>
+                                            <button type="submit" class="btn-submit">Upload</button>
                                         </div>
                                     </div>
                                 </form>
@@ -98,7 +115,7 @@
                                                     <div class="col-12 col-md-6 col-lg-4 mt-4">
                                                         <div class="card shadow-lg align-self-start">
                                                             <div
-                                                                class="card-header bg-primary text-light d-flex justify-content-between">
+                                                                class="card-header color-bg text-light d-flex justify-content-between">
                                                                 <div>
                                                                     <h5 class="text-break">{{ $image->jabatan }}</h5>
                                                                 </div>
@@ -128,7 +145,7 @@
                                                                 @endif
                                                             </div>
                                                             <div
-                                                                class="card-footer text-dark d-flex justify-content-center">
+                                                                class="card-footer text-light d-flex justify-content-center">
                                                                 <h4 class="text-break">
                                                                     {{ $image->nama }}
                                                                 </h4>

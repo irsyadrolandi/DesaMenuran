@@ -1,5 +1,50 @@
 @include('dashboard.template.head')
+<style>
+    .btn-submit {
+        display: inline-flex;
+            align-items: center;
+            background-color: #01796f;
+            border-color: #01796f;
+            color: white;
+            padding: 5px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            text-decoration: none;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
 
+        .btn-submit .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 25px;
+            height: 25px;
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 5px 0 0 5px;
+            margin-right: 10px;
+        }
+
+        .btn-submit .separator {
+            width: 1px;
+            height: 25px;
+            background-color: rgba(255, 255, 255, 0.5);
+            margin: 0 10px;
+        }
+
+        .btn-submit .icon i {
+            color: white;
+        }
+
+        .btn-submit .text {
+            margin-left: 5px;
+        }
+
+        .btn-submit:hover {
+            background-color: #016a60;
+            border-color: #016a60;
+            text-decoration: none;
+        }
+</style>
 <body id="page-top">
 
     <!-- Page Wrapper -->
@@ -62,10 +107,11 @@
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <!-- <h1 class="h3 mb-4 text-gray-800">Kabar Desa</h1> -->
 
-                        <a href="{{ route('kabar-desa.create') }}" class="btn btn-primary btn-icon-split">
+                        <a href="{{ route('kabar-desa.create') }}" class="btn-submit btn-icon-split">
                             <span class="icon text-white-50">
                                 <i class="fas fa-plus"></i>
                             </span>
+                            <span class="separator"></span>
                             <span class="text">Tambah Kabar Desa</span>
                         </a>
                     </div>
