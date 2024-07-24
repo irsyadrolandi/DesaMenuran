@@ -1,6 +1,21 @@
 @extends('template')
 @section('contents')
+<style>
+    .btn-submit {
+        background-color: #01796f;
+        border-color: #01796f;
+        color: white;
+        padding: 7px 15px;
+        border-radius: 5px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
 
+    .btn-submit:hover {
+        background-color: #016a60;
+    }
+</style>
 {{-- <div class="form-signin w-100 m-auto"> --}}
     <div class="page-heading">
         <div class="container ">
@@ -38,7 +53,7 @@
                           </div>
 
 
-                          <button class="btn btn-primary w-100 py-2" type="submit">login</button>
+                          <button class="btn-submit w-100 py-2" type="submit">login</button>
 
                         </form>
                         <small>Not Registered?</small>

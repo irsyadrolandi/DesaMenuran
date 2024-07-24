@@ -18,6 +18,9 @@
             opacity: 1;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
+        .color-bg {
+        background-color: #01796f;
+        }
     </style>
 
     <div class="page-heading">
@@ -51,7 +54,7 @@
                                                     @foreach ($images as $image)
                                                         <div class="col-12 col-md-6 col-lg-3 mt-3">
                                                             <div class="card shadow-lg align-self-start">
-                                                                <div class="card-header bg-primary text-light d-flex justify-content-between">
+                                                                <div class="card-header color-bg text-light d-flex justify-content-between">
                                                                     <div class="align-self-start">
                                                                         {{ $image->title }}
                                                                     </div>

@@ -62,7 +62,7 @@
 
                         <div class="card shadow mb-4 w-100">
                             <!-- Card Header - Dropdown -->
-                            <div class="card-header py-3">
+                            <div>
                                 <form action="{{ route('upload-galeri') }}" class="form-image-upload" method="POST"
                                     enctype="multipart/form-data">
 

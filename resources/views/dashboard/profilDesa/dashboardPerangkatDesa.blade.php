@@ -25,6 +25,9 @@
     .color-bg {
         background-color: #01796f;
     }
+    .color-footer {
+    background-color: #FFFFFF !important;
+    }
 </style>
 
 <body id="page-top">
@@ -56,7 +59,7 @@
 
                         <div class="card shadow mb-4 w-100">
                             <!-- Card Header - Dropdown -->
-                            <div class="card-header py-3">
+                            <div>
 
                                 <form action="{{ route('upload-perangkat') }}" class="form-image-upload rounded" method="POST"
                                     enctype="multipart/form-data">
@@ -145,7 +148,7 @@
                                                                 @endif
                                                             </div>
                                                             <div
-                                                                class="card-footer text-light d-flex justify-content-center">
+                                                                class="card-footer color-footer text-dark d-flex justify-content-center">
                                                                 <h4 class="text-break">
                                                                     {{ $image->nama }}
                                                                 </h4>

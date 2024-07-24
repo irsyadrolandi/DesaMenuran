@@ -2357,8 +2357,8 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #1cc88a;
-  border-color: #1cc88a;
+  background-color: #01796f;
+  border-color: #01796f;
 }
 
 .btn-primary:hover {
@@ -2376,8 +2376,8 @@ fieldset:disabled a.btn {
 
 .btn-primary.disabled, .btn-primary:disabled {
   color: #fff;
-  background-color: #4e73df;
-  border-color: #4e73df;
+  background-color: #01796f;
+  border-color: #01796f;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
@@ -4552,8 +4552,8 @@ input[type="button"].btn-block {
 .card-header {
   padding: 0.75rem 1.25rem;
   margin-bottom: 0;
-  background-color: #01796f;
-  border-bottom: 1px solid #01796f;
+  background-color: #E8E8E8;
+  border-bottom: 1px solid #E8E8E8;
 }
 
 .card-header:first-child {
@@ -4562,8 +4562,8 @@ input[type="button"].btn-block {
 
 .card-footer {
   padding: 0.75rem 1.25rem;
-  background-color: #01796f;
-  border-top: 1px solid #01796f;
+  background-color: #fff;
+  border-top: 1px solid #fff;
 }
 
 .card-footer:last-child {
@@ -10813,7 +10813,7 @@ a:focus {
   font-weight: 900;
   content: '\f107';
   font-family: 'Font Awesome 5 Free';
-  color: #01796f;
+  color: #E8E8E8;
 }
 
 .card .card-header[data-toggle="collapse"].collapsed {
