@@ -63,7 +63,17 @@
                                                             <div class="row">
                                                                 <div class="col-lg-12">
                                                                     <h4>Gambaran Umum</h4>
-                                                                    <p>Ini adalah gambaran umum desa menuran.</p>
+                                                                    <p>
+
+                                                                    Desa Menuran terletak di Kecamatan Baki, Kabupaten Sukoharjo, dan merupakan salah satu desa yang memiliki sejarah panjang dan budaya yang kaya. Dengan luas wilayah yang mencakup berbagai lahan pertanian serta pemukiman penduduk, Desa Menuran menawarkan pemandangan alam yang indah dan suasana yang tenang.
+
+                                                                    Secara administratif, Desa Menuran terdiri dari beberapa dusun yang masing-masing dipimpin oleh seorang kepala dusun. Desa ini memiliki struktur pemerintahan yang terorganisir dengan baik, yang berupaya untuk terus meningkatkan kesejahteraan masyarakat melalui berbagai program pembangunan dan pelayanan publik.
+
+                                                                    Desa Menuran juga dikenal dengan kerukunan warganya yang tinggi. Masyarakat desa ini sangat menjunjung tinggi nilai-nilai gotong royong dan saling membantu. Berbagai kegiatan sosial dan budaya sering diadakan untuk mempererat hubungan antarwarga dan melestarikan tradisi-tradisi lokal.
+
+                                                                    Selain itu, Desa Menuran juga memiliki potensi ekonomi yang cukup baik. Pertanian merupakan sektor utama mata pencaharian warga, dengan berbagai komoditas seperti padi, jagung, dan sayuran. Di samping itu, desa ini juga terkenal dengan para pengrajin batu bata yang menghasilkan produk berkualitas tinggi dan produksi nasi liwet yang menjadi ciri khas kuliner lokal. Program Masyarakat Peduli Kali Baki (MasdulKabi) juga aktif dalam menjaga kebersihan dan kelestarian lingkungan sekitar sungai, menunjukkan kepedulian warga terhadap lingkungan.
+
+                                                                    Dengan visi "Bersama Membangun Menuran Makmur Bersatu," Desa Menuran berkomitmen untuk terus berinovasi dan berkembang, mewujudkan tata pemerintahan yang tertib dan berwibawa, serta meningkatkan kesejahteraan dan keamanan warganya. Berbagai program pembangunan sarana dan prasarana desa terus dilakukan untuk mendukung visi tersebut, dengan harapan dapat membawa Desa Menuran menuju masa depan yang lebih cerah dan sejahtera.</p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -98,8 +108,17 @@
                                                         <div class="description">
                                                             <div class="row">
                                                                 <div class="col-lg-12">
-                                                                    <h4>Visi &amp; Misi</h4>
-                                                                    <p>Menuju desa menuran yang makmur modern dan berbudaya</p>
+                                                                <h4>Visi & Misi</h4>
+                                                                <p><strong>VISI</strong></p>
+                                                                <p>Bersama Membangun Menuran Makmur Bersatu.</p>
+                                                                <p><strong>MISI</strong></p>
+                                                                <ul>
+                                                                    <li class="active">Mewujudkan Sistem Tata Pemerintahan Desa Yang Tertib Dan Berwibawa</li>
+                                                                    <li class="active">Mewujudkan Tata Perencanaan Pembangunan Sarana Prasarana Desa Yang Baik</li>
+                                                                    <li class="active">Mewujudkan Kesejahteraan Dan Keamanan Warga Desa</li>
+                                                                    <li class="active">Mewujudkan Kepedulian Pada Warga Yang Membutuhkan</li>
+                                                                </ul>
+
                                                                 </div>
                                                             </div>
                                                         </div>

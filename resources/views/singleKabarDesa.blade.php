@@ -188,9 +188,9 @@ https://templatemo.com/tm-564-plot-listing
                 </div>
                 <div class="col-lg-12">
                     <div class="sub-footer">
-                        <p>Copyright © 2021 Plot Listing Co., Ltd. All Rights Reserved.
+                        <p>
                             <br>
-                            Design: <a rel="nofollow" href="https://templatemo.com" title="CSS Templates">TemplateMo</a>
+                            Design: <a rel="nofollow" href="https://www.instagram.com/kkn.desamenuran/" title="CSS Templates">@ 2024 Desa Menuran</a>
                         </p>
                     </div>
                 </div>
